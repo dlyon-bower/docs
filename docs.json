@@ -18,7 +18,8 @@
             "pages": [
               "index",
               "quickstart",
-              "getting-started/onboarding"
+              "getting-started/onboarding",
+              "getting-started/install-pwa"
             ]
           },
           {
