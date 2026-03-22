@@ -12,7 +12,6 @@ The left-hand panel is your page tree — a hierarchical view of all your notes 
 ### Drag and drop
 
 - **Move a note** — drag it from its current position to a new location in the tree. Drop it onto a collection to nest it inside.
-- **Reorder notes** — drag up or down within a collection to change the order.
 - **Move a collection** — drag an entire collection (and everything inside it) to a new position.
 
 Drag-and-drop works for both notes and collections.
@@ -23,20 +22,17 @@ For moving, copying, or deleting multiple items at once:
 
 <Steps>
   <Step title="Select items">
-    Cmd+click (Mac) or Ctrl+click (Windows) to select multiple notes or collections.
+    Click the checkboxes next to notes or collections to select them. In the table view, hold **Shift** and click to select all rows between two items.
   </Step>
-  <Step title="Right-click any selected item">
-    This opens the bulk action menu.
-  </Step>
-  <Step title="Choose an action">
-    - **Move to** — move all selected items to a collection
+  <Step title="Choose an action from the toolbar">
+    A bulk action toolbar appears when items are selected:
+    - **Move to** — move all selected items to a new parent
     - **Copy to** — copy all selected items to a collection (originals stay in place)
-    - **Delete** — remove all selected items
-    - **Add to collection** — associate all selected items with a collection without moving them
+    - **Delete** — permanently delete all selected items
   </Step>
 </Steps>
 
-Bulk actions apply to everything in your selection. If you've selected a collection, all notes within it are included.
+Bulk actions apply to everything in your selection. If you've selected a collection, all artifacts within it are included.
 
 ## The **&#8942;** menu
 
@@ -49,8 +45,13 @@ Every note and collection in the page tree has a **&#8942;** menu (the three-dot
 | Copy to | Duplicate to a collection |
 | Add to collection | Associate with a collection |
 | Delete | Remove permanently (with confirmation) |
-| Share | Manage access for workspace members |
+
+## Undoing actions
+
+When you move or copy items, a toast notification appears at the bottom of the screen with an **Undo** button. You have 5 seconds to undo the action before it's finalised.
 
 ## A note on deletion
 
-Deleted notes are permanently removed and cannot be recovered. Original attachments are deleted alongside their notes. If you need to preserve data, [export it](/organisation/export) before deleting.
+Deletion is permanent and cannot be undone. When you delete a collection, all artifacts and sub-collections inside it are also deleted. Original attachments are removed alongside their notes.
+
+If you need to preserve data, [export it](/organisation/export) before deleting.
