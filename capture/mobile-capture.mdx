@@ -1,0 +1,77 @@
+---
+title: "Mobile capture"
+description: "Voice transcription and photo OCR — capture by speaking or pointing your camera."
+---
+
+Capture by voice or photo on your phone. Bower transcribes, extracts, and syncs to your desktop — so nothing falls between the bench and the write-up.
+
+## Voice transcription
+
+Bower records your spoken observations and transcribes them in real time using scientific speech recognition trained on domain vocabulary. The transcript appears as an editable note, with the original recording attached.
+
+### To record a voice note
+
+<Steps>
+  <Step title="Open the Bower mobile app" />
+  <Step title="Tap the capture button">
+    Or use the wake word if hands-free mode is enabled.
+  </Step>
+  <Step title="Speak your observation">
+    Bower listens and transcribes in real time.
+  </Step>
+  <Step title="Tap stop">
+    Or say "stop note" in hands-free mode.
+  </Step>
+  <Step title="Done">
+    Your transcript syncs to desktop within seconds.
+  </Step>
+</Steps>
+
+<Info>
+**A few things worth knowing:**
+- Bower recognises scientific terminology: units, chemical names, numeric values, and Latin binomials.
+- If a value looks outside an expected range, Bird will flag it after capture — not during.
+- The original audio is always preserved alongside the transcript. If the transcription missed something, you can listen back.
+- Accuracy improves as Bower learns your terminology and accent over time.
+</Info>
+
+## Photo OCR
+
+Point your camera at a handwritten notebook, printed document, instrument display, or sample label. Bower extracts the text and structures it as an editable note.
+
+### To capture a photo
+
+<Steps>
+  <Step title="In the mobile app, tap the camera icon" />
+  <Step title="Frame the document, display, or label and capture" />
+  <Step title="Bower runs OCR and extracts the content" />
+  <Step title="The original image is attached to the note with metadata" />
+</Steps>
+
+### What Bower can read
+
+- Printed text and tables (approximately 98% accuracy)
+- Handwritten lab notebooks
+- Instrument displays and gauges
+- Mixed handwriting and print
+- Sample storage labels
+
+### After extraction
+
+- Extracted tables are inline-editable — correct values directly without retyping.
+- Low-confidence regions are highlighted. Bird will surface anything it wasn't sure about.
+- Everything becomes searchable immediately.
+
+## Hands-free mode
+
+For contamination-sensitive environments where even one tap is too many, Bower supports wake word activation.
+
+- Say the wake word to start recording.
+- Say "stop note" to end.
+- No screen interaction required.
+
+Hands-free mode is enabled in **Settings > Capture > Hands-free mode**.
+
+## What happens after capture
+
+Every voice note and photo syncs to your desktop workspace via WebSocket — no manual upload needed. Once there, it's fully searchable, editable, and available to Bird for summarisation and retrieval.

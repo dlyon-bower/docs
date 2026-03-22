@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Bower Help Centre",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#1F3A89",
+    "light": "#5E7D4F",
+    "dark": "#1F3A89"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
     "tabs": [
       {
@@ -18,51 +18,47 @@
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "getting-started/onboarding"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Capture",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "capture/mobile-capture",
+              "capture/batch-import",
+              "capture/editor",
+              "capture/keyboard-shortcuts"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "AI & Search",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "ai-and-search/bird-ai-assistant",
+              "ai-and-search/hybrid-search",
+              "ai-and-search/live-agent-mode"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Organisation",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "organisation/notes-vs-attachments",
+              "organisation/collections",
+              "organisation/protocols",
+              "organisation/tags",
+              "organisation/linked-entities",
+              "organisation/organising-workspace",
+              "organisation/export"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Workspaces & Account",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "workspaces-and-account/create-workspace",
+              "workspaces-and-account/invite-team-members",
+              "workspaces-and-account/switch-workspaces",
+              "workspaces-and-account/manage-account",
+              "workspaces-and-account/audit-logs",
+              "workspaces-and-account/dark-mode"
             ]
           }
         ]
@@ -71,52 +67,39 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Bower App",
+          "href": "https://app.bowerlabs.ai",
+          "icon": "flask"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@bowerlabs.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Bower",
+      "href": "https://app.bowerlabs.ai"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "claude",
+      "chatgpt"
+    ]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {}
   }
 }

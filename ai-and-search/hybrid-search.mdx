@@ -1,0 +1,43 @@
+---
+title: "Hybrid semantic search"
+description: "Find anything in your workspace — even if you don't remember the exact words you used."
+---
+
+Bower's search finds anything in your workspace — even if you don't remember the exact words you used.
+
+## How it works
+
+Bower uses hybrid semantic search: a combination of keyword matching and vector embedding. In practice, this means:
+
+- **Exact terms** are found reliably — searching for "pH 8.1" returns notes that contain that value.
+- **Meaning-based queries** also work — "water alkalinity last Tuesday" will surface relevant notes even if those exact words don't appear together in any note.
+- **Scientific synonyms** are handled — "sodium chloride" and "NaCl" return the same results.
+
+Search covers everything in your workspace: voice transcripts, OCR'd text, PDF extractions, imported documents, note content, and attachment metadata.
+
+## How to search
+
+<Steps>
+  <Step title="Open search">
+    Press **Cmd+K** (Mac) or **Ctrl+K** (Windows/Linux), or click the search bar at the top of the desktop app.
+  </Step>
+  <Step title="Type your query">
+    Use natural language or keywords.
+  </Step>
+  <Step title="Browse results">
+    Results appear ranked by relevance, with the matching excerpt shown in context.
+  </Step>
+  <Step title="Open a result">
+    Click any result to open the note.
+  </Step>
+</Steps>
+
+## Tips for better results
+
+- **Be specific about time** — "field samples from February" narrows results more than "field samples."
+- **Use your own terminology** — Bower learns from what you capture, so your specific shorthand and abbreviations become findable over time.
+- **Search from Bird** — for questions that need synthesis rather than retrieval, asking Bird directly is often more useful than a keyword search.
+
+## What's indexed
+
+Everything captured or imported into Bower is indexed for search immediately — there's no delay between capture and searchability. This includes the full text of transcripts, OCR extractions, and document content, as well as titles, tags, and metadata.

@@ -1,0 +1,97 @@
+---
+title: "The note editor"
+description: "Rich text editing with slash commands, formatting, tables, and images."
+---
+
+Every note in Bower opens in a rich text editor. You can type freely, format text, insert tables and images, and use slash commands for quick block insertion.
+
+## Text formatting
+
+The toolbar at the top of the editor provides:
+
+| Action | Shortcut |
+| --- | --- |
+| **Bold** | Cmd+B |
+| *Italic* | Cmd+I |
+| Underline | Cmd+U |
+| ~~Strikethrough~~ | Cmd+Shift+X |
+| `Code` | Cmd+E |
+| Highlight | Toolbar button |
+| Text colour | Toolbar colour picker |
+
+You can also set text alignment (left, centre, right, justify) from the toolbar.
+
+## Headings
+
+Use the heading dropdown in the toolbar to switch between paragraph text and three heading levels. Or type in the editor:
+
+- `# ` for Heading 1
+- `## ` for Heading 2
+- `### ` for Heading 3
+
+## Slash commands
+
+Type `/` at the start of a new line to open the command menu. This is the fastest way to insert blocks.
+
+### Style
+
+| Command | What it inserts |
+| --- | --- |
+| `/text` | Plain paragraph |
+| `/h1` | Heading 1 |
+| `/h2` | Heading 2 |
+| `/h3` | Heading 3 |
+| `/bullet` | Bullet list |
+| `/numbered` | Ordered list |
+| `/task` | Task list with checkboxes |
+| `/quote` | Blockquote |
+| `/code` | Code block |
+
+### Insert
+
+| Command | What it inserts |
+| --- | --- |
+| `/table` | 3x3 table with header row |
+| `/hr` | Horizontal divider |
+| `/image` | Image upload dialog |
+
+### Align
+
+| Command | What it does |
+| --- | --- |
+| `/align left` | Left-align text |
+| `/align center` | Centre text |
+| `/align right` | Right-align text |
+| `/justify` | Justify text |
+
+## Lists
+
+Three list types are available:
+
+- **Bullet list** — unordered items
+- **Numbered list** — ordered items
+- **Task list** — items with checkboxes you can tick off
+
+Start a line with `- ` for bullets, `1. ` for numbered, or use the slash command.
+
+## Tables
+
+Insert a table with `/table` or the toolbar button. Tables start as 3x3 with a header row. You can add and remove rows and columns from the table controls.
+
+## Images
+
+Insert images with `/image` or the toolbar button. You can also drag and drop images directly into the editor. Uploaded images are resizable — drag the handles to adjust.
+
+Click any image to view it in a lightbox.
+
+## Code blocks
+
+Insert a code block with `/code` or the toolbar button. Code blocks support syntax highlighting.
+
+## Links
+
+Select text and click the link button in the toolbar (or press Cmd+K while text is selected) to add a hyperlink. Click an existing link to edit or remove it.
+
+## Undo and redo
+
+Use **Cmd+Z** to undo and **Cmd+Shift+Z** to redo. The toolbar also has undo/redo buttons.

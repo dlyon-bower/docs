@@ -1,0 +1,53 @@
+---
+title: "Bird: your AI assistant"
+description: "Ask Bird anything about your workspace — search, summarise, compare, and flag anomalies."
+---
+
+Bird is Bower's built-in AI assistant. Ask it anything about your workspace — it can search, summarise, compare, and help you make sense of your captured data.
+
+## What Bird can do
+
+<AccordionGroup>
+  <Accordion title="Search and retrieve">
+    Ask Bird in plain language: "Show me pH readings from last month" or "Find my notes on sample batch 14." Bird searches across everything in your workspace — voice transcripts, OCR'd documents, imported files — and returns relevant results with context.
+  </Accordion>
+  <Accordion title="Summarise">
+    Select one or more notes and ask Bird to summarise. Useful when you've captured a week of observations and want the key points before a meeting or write-up.
+  </Accordion>
+  <Accordion title="Compare">
+    Bird can pull related notes side by side. "Compare my alkalinity readings from this week and last week" works as a natural language query.
+  </Accordion>
+  <Accordion title="Generate execution plans">
+    Given a set of notes and a protocol, Bird can draft a structured execution plan. Useful for turning a series of captured observations into a formal experimental record.
+  </Accordion>
+  <Accordion title="Flag anomalies">
+    When a captured value falls outside the expected range for a protocol field, Bird surfaces it after capture — not during. It explains why it flagged the value and asks what you'd like to do.
+  </Accordion>
+  <Accordion title="Context-aware assistance">
+    Bird synthesises across multiple notes to answer questions that span your whole workspace. "What did I observe about salinity across all my field samples?" is a reasonable question to ask.
+  </Accordion>
+</AccordionGroup>
+
+## How to use Bird
+
+Bird is available in the right-hand panel of the desktop app. Type your question or instruction in natural language. No special syntax required.
+
+You can also invoke Bird from within a note using the `/bird` command.
+
+## What Bird won't do
+
+- Bird won't act on your data without permission. It suggests; you confirm.
+- Bird won't present AI-extracted values as verified fact. Confidence indicators are shown where relevant.
+- Bird won't interrupt a capture in progress. It waits until you've stopped recording before offering observations.
+
+## Bird vs. search
+
+Bird and search are different tools for different moments.
+
+|  | Bird | Search |
+| --- | --- | --- |
+| Best for | Questions, summaries, comparisons, flagged anomalies | Finding a specific note or file you know exists |
+| Input | Natural language | Keywords or semantic query |
+| Output | Synthesised answer with sources | List of matching notes |
+
+Use search when you know what you're looking for. Use Bird when you're trying to make sense of what you've captured.

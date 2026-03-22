@@ -1,0 +1,46 @@
+---
+title: "Notes vs. attachments"
+description: "Understand the two types of artifacts in Bower and when to use each."
+---
+
+Bower has two types of artifacts: notes and attachments. Understanding the difference helps you keep your workspace organised without thinking about it.
+
+## Notes
+
+A note is the primary unit of content in Bower. It has editable text, is fully searchable, and can be tagged, organised into collections, and referenced by Bird.
+
+Notes are created automatically when you:
+
+- Record a voice note (the transcript becomes the note)
+- Capture a photo (the OCR output becomes the note)
+- Import a document (the extracted content becomes the note)
+- Type directly in the editor
+
+Think of a note as your editable scientific record. It's what you search, organise, and build on.
+
+## Attachments
+
+An attachment is the original source file — the raw audio, the photo, the PDF, the Word document. Attachments are always preserved alongside the note they generated.
+
+Attachments are useful when:
+
+- You need to verify what was actually said or captured (listen back to the original audio)
+- You want to share the source document with a colleague
+- You need the original for compliance or audit purposes
+
+Attachments are searchable by filename and metadata, but their internal content is indexed via the note they generated — not directly.
+
+## When to create a standalone attachment
+
+In most cases, you won't create a standalone attachment — Bower generates both the note and the attachment together automatically from any capture or import.
+
+If you want to store a file without processing it (no OCR, no transcription), drag it into the workspace and select **Store as attachment only**. This keeps the file accessible without generating a note.
+
+## Quick reference
+
+|  | Note | Attachment |
+| --- | --- | --- |
+| Content | Editable text (transcript, OCR output, typed) | Original source file |
+| Searchable | Yes — full text | Yes — filename and metadata |
+| Accessible to Bird | Yes | Via associated note |
+| Use when | You want to work with content | You want to preserve the source |
