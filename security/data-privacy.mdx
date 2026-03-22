@@ -46,17 +46,6 @@ This isolation is enforced in middleware, not application logic — it cannot be
 - **Token expiry** — expired or revoked tokens are rejected immediately.
 - **Role-based access** — four roles (Owner, Admin, Member, Viewer) with a strict hierarchy enforced at the API level.
 
-## API security
-
-- **Rate limiting** — API requests are rate-limited to prevent abuse.
-- **CORS** — only approved origins can make requests to Bower's API. Wildcard origins are not allowed.
-- **Security headers** — Content Security Policy, X-Content-Type-Options, and X-Frame-Options are set on all responses.
-- **Signed file URLs** — files are never served from a public bucket. Every download uses a signed URL that expires after 24 hours.
-
-## Secrets management
-
-API keys, database credentials, and service account tokens are stored in a dedicated secrets manager — never in environment variables, source code, or configuration files. Application code accesses secrets through a centralised configuration layer that caches values in memory and never logs them.
-
 ## Audit trail
 
 Every create, update, and delete action in your workspace is logged with:
