@@ -58,8 +58,16 @@
               "workspaces-and-account/invite-team-members",
               "workspaces-and-account/switch-workspaces",
               "workspaces-and-account/manage-account",
-              "workspaces-and-account/audit-logs",
               "workspaces-and-account/dark-mode"
+            ]
+          },
+          {
+            "group": "Security & Compliance",
+            "pages": [
+              "security/roles-and-permissions",
+              "security/audit-logs",
+              "security/password-and-security",
+              "security/data-privacy"
             ]
           }
         ]

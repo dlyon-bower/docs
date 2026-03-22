@@ -1,0 +1,50 @@
+---
+title: "Data privacy"
+description: "How Bower handles your research data — isolation, storage, and deletion."
+---
+
+Your research data is sensitive. Here's how Bower protects it.
+
+## Workspace isolation
+
+Workspaces are fully isolated from each other. This is enforced at every level:
+
+- **Every API request** is scoped to a single workspace. The server verifies your membership before returning any data.
+- **Search results** only include notes from your current workspace.
+- **Bird** only accesses notes in the workspace you're working in.
+- **Members** of one workspace cannot see data in another workspace unless explicitly invited.
+
+This isolation is not a UI convention — it's enforced by the backend on every request.
+
+## Data storage
+
+- Notes, collections, and metadata are stored in a managed PostgreSQL database.
+- Files (images, audio, PDFs, documents) are stored in Google Cloud Storage.
+- Authentication is handled by Firebase Authentication.
+- All data is hosted on Google Cloud infrastructure.
+
+## What happens when you delete data
+
+- **Deleted notes** are permanently removed along with their associated files. Deletion is not reversible — there is no trash or recovery period.
+- **Deleted attachments** are removed from storage alongside their parent note.
+- **Removing a member** revokes their access immediately. Notes they created remain in the workspace.
+- **Deleting your account** permanently removes your profile and any workspaces you own. This cannot be undone.
+
+<Warning>
+Deletion is permanent. If you need to preserve data for compliance or audit purposes, export it first.
+</Warning>
+
+## AI processing
+
+When Bower processes your data (voice transcription, photo text extraction, summarisation via Bird), the content is sent to AI model providers for processing. Bower uses:
+
+- Google Cloud services for transcription and text extraction
+- AI models for Bird's conversational features
+
+Your data is processed to provide the service and is not used to train AI models.
+
+## Your responsibilities
+
+- Do not store credentials, passwords, or access tokens in notes.
+- Use [roles and permissions](/security/roles-and-permissions) to control who can access your workspace.
+- Review the [audit logs](/security/audit-logs) periodically if your workspace handles sensitive research data.
