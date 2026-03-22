@@ -65,7 +65,6 @@
           {
             "group": "Security & Compliance",
             "pages": [
-              "security/roles-and-permissions",
               "security/audit-logs",
               "security/password-and-security",
               "security/data-privacy"
