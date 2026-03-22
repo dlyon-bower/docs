@@ -27,7 +27,6 @@
             "pages": [
               "capture/mobile-capture",
               "capture/batch-import",
-              "capture/ai-titles",
               "capture/editor",
               "capture/keyboard-shortcuts"
             ]
@@ -37,19 +36,20 @@
             "pages": [
               "ai-and-search/bird-ai-assistant",
               "ai-and-search/live-agent-mode",
-              "ai-and-search/hybrid-search"
+              "ai-and-search/hybrid-search",
+              "capture/ai-titles"
             ]
           },
           {
             "group": "Organisation",
             "pages": [
               "organisation/collections",
+              "organisation/notes-vs-attachments",
               "organisation/protocols",
               "organisation/tags",
               "organisation/linked-entities",
               "organisation/organising-workspace",
-              "organisation/export",
-              "organisation/notes-vs-attachments"
+              "organisation/export"
             ]
           },
           {
