@@ -27,6 +27,7 @@
             "pages": [
               "capture/mobile-capture",
               "capture/batch-import",
+              "capture/ai-titles",
               "capture/editor",
               "capture/keyboard-shortcuts"
             ]
@@ -42,13 +43,13 @@
           {
             "group": "Organisation",
             "pages": [
-              "organisation/notes-vs-attachments",
               "organisation/collections",
               "organisation/protocols",
               "organisation/tags",
               "organisation/linked-entities",
               "organisation/organising-workspace",
-              "organisation/export"
+              "organisation/export",
+              "organisation/notes-vs-attachments"
             ]
           },
           {
