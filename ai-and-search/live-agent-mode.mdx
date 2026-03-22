@@ -1,29 +1,27 @@
 ---
 title: "Live agent mode"
-description: "A real-time conversation with Bird, with full video awareness."
+description: "A real-time voice and video conversation with Bird on your phone."
 ---
 
-A real-time conversation with Bird, with full video awareness. Describe what you're seeing, show your screen or camera, and get contextual assistance without breaking your flow.
+Live agent mode is a continuous, low-latency audio and video session with Bird on your mobile device. Unlike the standard chat interface — where you type a question and wait for a response — live mode is conversational. You can talk through an experiment, describe what's on an instrument display, or ask follow-up questions without stopping to type.
 
-## What live agent mode is
-
-Live agent mode is a continuous, low-latency audio and video session with Bird. Unlike the standard chat interface — where you type a question and wait for a response — live mode is conversational. You can talk through an experiment, describe what's on an instrument display, or ask follow-up questions without stopping to type.
-
-With video awareness enabled, Bird can see what your camera sees and respond to visual context: "What's the reading on that display?" or "Does this sample look contaminated to you?" are reasonable things to ask.
+With video enabled, Bird can see what your camera sees and respond to visual context: "What's the reading on that display?" or "Does this sample look contaminated to you?" are reasonable things to ask.
 
 ## When to use it
 
-- You're mid-experiment and need hands-free assistance
-- You want to think out loud and have Bird track the key observations
+- You're mid-experiment and want to talk through your observations
 - You need to describe something visual that would be difficult to type
-- You want a real-time second opinion on an observation before moving to the next step
+- You want Bird to track key observations while you work
+- You want a real-time second opinion before moving to the next step
+- You need longer than the 30-minute voice capture limit
 
 ## How to start a live session
 
 <Steps>
-  <Step title="Open Live mode">
-    In the Bower desktop app, click **Live** in the top navigation.
+  <Step title="Open Bower on your phone">
+    Go to [app.bowerlabs.ai](https://app.bowerlabs.ai) in your mobile browser, or open from your [home screen](/getting-started/install-pwa).
   </Step>
+  <Step title="Tap Live in the bottom navigation" />
   <Step title="Choose your mode">
     Select **Audio only** or **Audio + Video**.
   </Step>
@@ -31,11 +29,9 @@ With video awareness enabled, Bird can see what your camera sees and respond to 
     Allow microphone (and camera, if video) access when prompted.
   </Step>
   <Step title="Start talking">
-    Bird is listening.
+    Bird is listening and can respond in real time.
   </Step>
 </Steps>
-
-To end the session, click **End session**. A summary of the conversation is saved automatically as a note in your workspace.
 
 ## Video awareness
 
@@ -47,12 +43,25 @@ With video enabled, Bird processes your camera feed in real time. It can:
 
 Bird will not act on visual information unprompted — it responds when you ask.
 
+## Capturing notes during a session
+
+You can ask Bird to capture what it sees or hears at any point during a live session:
+
+- **"Take a snapshot"** — Bird captures the current camera frame and saves it as an attachment in your workspace.
+- **"Create a note from what we just discussed"** — Bird creates a note with the key points from your conversation.
+- You can also capture a photo manually during the session.
+
+## Standby mode
+
+When you need to pause — to have a private conversation, take a phone call, or step away — put Bird in standby. In standby, Bird stops listening and does not send any data.
+
+- **To enter standby:** Tap the standby button, or say **"Standby Bird"**
+- **To wake Bird:** Say **"Hello Bird"**
+
+This means you can keep your phone in your pocket with headphones, or leave it on the lab bench, and Bird will only listen when you want it to. Standby is useful for long lab sessions where you want Bird available but not always active.
+
 ## What's saved
 
-At the end of every live session, Bower saves:
+During a live session, notes and snapshots are only saved when you explicitly ask Bird to capture them. Nothing is automatically saved — you decide what's worth keeping.
 
-- A full transcript of the conversation
-- A summary note with key observations Bird identified
-- Any values or data points Bird extracted during the session
-
-All of this is searchable immediately after the session ends.
+All captured notes and snapshots are searchable immediately.

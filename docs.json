@@ -35,8 +35,8 @@
             "group": "AI & Search",
             "pages": [
               "ai-and-search/bird-ai-assistant",
-              "ai-and-search/hybrid-search",
-              "ai-and-search/live-agent-mode"
+              "ai-and-search/live-agent-mode",
+              "ai-and-search/hybrid-search"
             ]
           },
           {

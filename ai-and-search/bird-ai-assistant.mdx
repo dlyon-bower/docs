@@ -1,15 +1,20 @@
 ---
 title: "Bird: your AI assistant"
-description: "Ask Bird anything about your workspace — search, summarise, compare, and flag anomalies."
+description: "Ask Bird anything about your workspace — search, summarise, compare, create, and organise."
 ---
 
-Bird is Bower's built-in AI assistant. Ask it anything about your workspace — it can search, summarise, compare, and help you make sense of your captured data.
+Bird is Bower's built-in AI assistant. It has full access to your workspace — it can read, search, create, and organise your notes, collections, and attachments. It can also search the web for scientific sources.
+
+Every answer Bird gives includes **groundings** — references back to the specific notes, attachments, or web sources it used. You always know where the information came from.
 
 ## What Bird can do
 
 <AccordionGroup>
   <Accordion title="Search and retrieve">
-    Ask Bird in plain language: "Show me pH readings from last month" or "Find my notes on sample batch 14." Bird searches across everything in your workspace — voice transcripts, photo extractions, imported files — and returns relevant results with context.
+    Ask Bird in plain language: "Show me pH readings from last month" or "Find my notes on sample batch 14." Bird searches across everything in your workspace — voice transcripts, photo extractions, imported files — and returns relevant results with links to the source notes.
+  </Accordion>
+  <Accordion title="Search the web">
+    Bird can search the web for scientific literature and external sources. Ask "What's the latest research on coral alkalinity tolerance?" and Bird will find relevant sources and cite them alongside your workspace data.
   </Accordion>
   <Accordion title="Summarise">
     Select one or more notes and ask Bird to summarise. Useful when you've captured a week of observations and want the key points before a meeting or write-up.
@@ -17,22 +22,40 @@ Bird is Bower's built-in AI assistant. Ask it anything about your workspace — 
   <Accordion title="Compare">
     Bird can pull related notes side by side. "Compare my alkalinity readings from this week and last week" works as a natural language query.
   </Accordion>
+  <Accordion title="Create and edit notes">
+    Bird can create new notes, protocols, and collections on your behalf. "Create a protocol for the PCR workflow we discussed" or "Make a new collection called February Field Samples" — Bird handles the creation and confirms what it did.
+  </Accordion>
+  <Accordion title="Organise your workspace">
+    Bird can move notes between collections, link related entities, add tags, and update titles. "Move all my alkalinity notes into the Field Samples collection" saves you the manual work.
+  </Accordion>
+  <Accordion title="Process files">
+    Bird can trigger text extraction on images, transcribe audio files, and read the content of PDFs and documents in your workspace.
+  </Accordion>
   <Accordion title="Generate execution plans">
     Given a set of notes and a protocol, Bird can draft a structured execution plan. Useful for turning a series of captured observations into a formal experimental record.
   </Accordion>
   <Accordion title="Flag anomalies">
     When a captured value falls outside the expected range for a protocol field, Bird surfaces it after capture — not during. It explains why it flagged the value and asks what you'd like to do.
   </Accordion>
-  <Accordion title="Context-aware assistance">
-    Bird synthesises across multiple notes to answer questions that span your whole workspace. "What did I observe about salinity across all my field samples?" is a reasonable question to ask.
+  <Accordion title="Invite team members">
+    Workspace owners and admins can ask Bird to generate an invitation link: "Create an invite link for the lab" — Bird generates a shareable link you can send to colleagues.
   </Accordion>
 </AccordionGroup>
+
+## Groundings — always showing the source
+
+Bird never gives you an answer without telling you where it came from. Every response includes groundings:
+
+- **Workspace sources** — links to the specific notes, attachments, or collections Bird referenced
+- **Web sources** — links to external articles, papers, or documentation Bird found online
+
+This means you can always verify Bird's answers. If Bird summarises three notes, you can click through to read the originals. If it cites a web source, the link is right there.
 
 ## How to use Bird
 
 Bird is available in the right-hand panel of the desktop app. Type your question or instruction in natural language. No special syntax required.
 
-You can also invoke Bird from within a note using the `/bird` command.
+You can also use **context chips** — select specific notes or collections before asking Bird a question, and it will focus its response on those items.
 
 ## What Bird won't do
 
@@ -46,8 +69,8 @@ Bird and search are different tools for different moments.
 
 |  | Bird | Search |
 | --- | --- | --- |
-| Best for | Questions, summaries, comparisons, flagged anomalies | Finding a specific note or file you know exists |
+| Best for | Questions, summaries, comparisons, creating notes, web research | Finding a specific note or file you know exists |
 | Input | Natural language | Keywords or semantic query |
-| Output | Synthesised answer with sources | List of matching notes |
+| Output | Synthesised answer with grounded sources | List of matching notes |
 
-Use search when you know what you're looking for. Use Bird when you're trying to make sense of what you've captured.
+Use search when you know what you're looking for. Use Bird when you're trying to make sense of what you've captured, or when you need to take action.
