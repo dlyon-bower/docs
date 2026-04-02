@@ -65,15 +65,15 @@
             ]
           },
           {
-            "group": "Security & Compliance",
+            "group": "Trust Centre",
             "pages": [
-              "security/data-privacy",
-              "security/sub-processors",
-              "security/cookies",
-              "security/audit-logs",
-              "security/password-and-security",
-              "security/privacy-policy",
-              "security/terms-of-service"
+              "trust-centre/data-privacy",
+              "trust-centre/sub-processors",
+              "trust-centre/cookies",
+              "trust-centre/audit-logs",
+              "trust-centre/password-and-security",
+              "trust-centre/privacy-policy",
+              "trust-centre/terms-of-service"
             ]
           }
         ]
