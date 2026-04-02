@@ -5,7 +5,7 @@ description: "Ask Bird anything about your workspace — search, summarise, comp
 
 Bird is Bower's built-in AI assistant. It has full access to your workspace — it can read, search, create, and organise your notes, collections, and attachments. It can also search the web for scientific sources.
 
-Every answer Bird gives includes **groundings** — references back to the specific notes, attachments, or web sources it used. You always know where the information came from.
+Every answer Bird gives includes **inline citations** — numbered references back to the specific notes, attachments, or web sources it used. You always know where the information came from.
 
 ## What Bird can do
 
@@ -42,14 +42,16 @@ Every answer Bird gives includes **groundings** — references back to the speci
   </Accordion>
 </AccordionGroup>
 
-## Groundings — always showing the source
+## Citations — always showing the source
 
-Bird never gives you an answer without telling you where it came from. Every response includes groundings:
+Bird never gives you an answer without telling you where it came from. When Bird references a source, it places a numbered citation marker like **[1]** directly after the relevant claim. You can click the marker to see the source details.
 
-- **Workspace sources** — links to the specific notes, attachments, or collections Bird referenced
-- **Web sources** — links to external articles, papers, or documentation Bird found online
+At the bottom of each response, a collapsible **Sources** section lists every source Bird used:
 
-This means you can always verify Bird's answers. If Bird summarises three notes, you can click through to read the originals. If it cites a web source, the link is right there.
+- **Workspace sources** — links to the specific notes, protocols, or attachments Bird referenced. Click through to read the originals.
+- **Web sources** — links to external articles, papers, or documentation Bird found online. Favicons and page titles are shown for easy identification.
+
+This means you can always verify Bird's answers. Citations appear for both workspace searches and web searches, so every factual claim is traceable.
 
 ## How to use Bird
 
@@ -75,6 +77,6 @@ Bird and search are different tools for different moments.
 | --- | --- | --- |
 | Best for | Questions, summaries, comparisons, creating notes, web research | Finding a specific note or file you know exists |
 | Input | Natural language | Keywords or semantic query |
-| Output | Synthesised answer with grounded sources | List of matching notes |
+| Output | Synthesised answer with inline citations | List of matching notes |
 
 Use search when you know what you're looking for. Use Bird when you're trying to make sense of what you've captured, or when you need to take action.
