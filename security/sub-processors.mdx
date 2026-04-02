@@ -1,0 +1,56 @@
+---
+title: "Sub-processors"
+description: "Third-party services that process data on behalf of Bower."
+---
+
+Bower uses the following third-party services ("sub-processors") to operate the platform. Each processes data on our behalf under a Data Processing Agreement (DPA).
+
+We will update this page whenever we add or remove a sub-processor.
+
+## Infrastructure & hosting
+
+| Service | Purpose | Data processed | Location |
+|---------|---------|---------------|----------|
+| [Google Cloud Platform](https://cloud.google.com/terms/cloud-privacy-notice) | Infrastructure, database, file storage, async job processing | All user data, files, database records | US (us-central1) |
+| [Firebase Authentication](https://firebase.google.com/support/privacy) | User authentication (email/password, Google OAuth) | Email addresses, authentication tokens | US |
+| [Cloudflare Turnstile](https://www.cloudflare.com/privacypolicy/) | Bot protection during sign-up | IP addresses, browser fingerprint data | Global (edge) |
+
+## AI processing
+
+When you use AI features (Bird chat, voice transcription, photo text extraction, document processing), your content is sent to one of these providers for inference. **Your data is not used to train AI models.**
+
+| Service | Purpose | Data processed | Location |
+|---------|---------|---------------|----------|
+| [Google AI (Gemini, Vertex AI)](https://cloud.google.com/terms/cloud-privacy-notice) | Live voice/video mode, text embeddings, semantic memory | Text, audio, video streams | US |
+| [Google Cloud Speech-to-Text](https://cloud.google.com/terms/cloud-privacy-notice) | Voice note transcription | Audio recordings | US |
+| [Google Cloud Vision](https://cloud.google.com/terms/cloud-privacy-notice) | Image analysis | Uploaded images | US |
+| [OpenAI](https://openai.com/policies/privacy-policy) | OCR / image text extraction, text generation | Text, images | US |
+| [Anthropic](https://www.anthropic.com/privacy) | AI chat (Bird), agent tasks | Text, chat messages | US |
+| [Mistral AI](https://mistral.ai/terms/#privacy-policy) | Alternative AI text generation | Text | EU (France) |
+
+## Analytics & observability
+
+| Service | Purpose | Data processed | Location |
+|---------|---------|---------------|----------|
+| [PostHog](https://posthog.com/privacy) | Product analytics, feature flags (requires [cookie consent](/security/cookies)) | Usage events, feature flag evaluations — no research content | US/EU |
+| [Langfuse](https://langfuse.com/privacy) | AI response quality monitoring | LLM request/response traces, token counts | EU/US |
+
+## Document processing
+
+| Service | Purpose | Data processed | Location |
+|---------|---------|---------------|----------|
+| [TipTap](https://tiptap.dev/privacy-policy) | Rich text editing, DOCX export/import | Document content during conversion | EU |
+
+## Data residency
+
+All primary data (database, files, backups) is stored in Google Cloud's **us-central1** region (Iowa, USA). AI processing may occur in the provider's default region as listed above.
+
+## Changes to this list
+
+We review our sub-processor list quarterly. If we add a new sub-processor that processes personal data, we will update this page. Material changes will be communicated via email to workspace owners.
+
+**Last reviewed:** April 2026
+
+## Questions
+
+Contact our Data Protection Officer at [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai).

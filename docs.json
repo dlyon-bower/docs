@@ -67,10 +67,11 @@
           {
             "group": "Security & Compliance",
             "pages": [
-              "security/audit-logs",
-              "security/password-and-security",
               "security/data-privacy",
-              "security/cookies"
+              "security/sub-processors",
+              "security/cookies",
+              "security/audit-logs",
+              "security/password-and-security"
             ]
           }
         ]
