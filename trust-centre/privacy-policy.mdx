@@ -60,11 +60,10 @@ We use the following services to operate Bower. Each processes data on our behal
 
 | Service | Purpose | Data Processed | Location |
 |---------|---------|---------------|----------|
-| Google Cloud Platform | Infrastructure, database, storage, AI | All user data | US (us-central1) |
-| OpenAI | OCR/image text extraction | Text, images | US |
-| Anthropic | AI chat (Bird) | Text, chat messages | US |
-| Google AI (Gemini) | Live voice/video, embeddings | Text, audio, video | US |
-| Mistral AI | Alternative AI provider | Text | EU (France) |
+| Google Cloud Platform | Infrastructure, database, storage | All user data | US (us-central1) |
+| Google AI (Gemini, Vertex AI) | AI chat, live voice/video, OCR, embeddings | Text, images, audio, video | US |
+| Google Cloud Speech-to-Text | Voice note transcription | Audio recordings | US |
+| Anthropic | AI chat (Bird), agent tasks | Text, chat messages | US |
 | Langfuse | AI quality monitoring | LLM traces | EU/US |
 | PostHog | Product analytics (with consent) | Usage events | US/EU |
 | TipTap | Rich text editing | Document content | EU |
