@@ -1,0 +1,71 @@
+---
+title: "Cookies"
+description: "What cookies Bower uses, why, and how to control them."
+---
+
+Bower uses a small number of cookies and browser storage items to keep you signed in, remember your preferences, and understand how the product is used.
+
+## Cookie consent
+
+When you first visit Bower, you'll see a consent banner at the bottom of the screen. You can choose:
+
+- **Accept all** — enables analytics cookies alongside essential ones.
+- **Essential only** — only the cookies Bower needs to function. No analytics or tracking.
+
+You can change your preference at any time from **Settings > Privacy**.
+
+## Cookie categories
+
+### Essential (always active)
+
+These cookies are required for Bower to work. They cannot be disabled.
+
+| Cookie / Storage | Purpose | Duration |
+|-----------------|---------|----------|
+| Firebase Auth token | Keeps you signed in and verifies your identity on every request | Session (refreshed automatically) |
+| `workspaceId` (localStorage) | Remembers which workspace you last used | Persistent |
+| `bower_cookie_consent` (localStorage) | Stores your cookie preference | Persistent |
+| `chakra-ui-color-mode` (localStorage) | Remembers your light/dark theme choice | Persistent |
+| `ui-store` (localStorage) | Sidebar state and UI preferences | Persistent |
+
+### Analytics (requires consent)
+
+These cookies help us understand how Bower is used so we can improve it. They are **only activated after you click "Accept all"** in the consent banner.
+
+| Cookie / Storage | Purpose | Provider | Duration |
+|-----------------|---------|----------|----------|
+| PostHog cookies | Product analytics, session recording, heatmaps | [PostHog](https://posthog.com/privacy) | Session / 1 year |
+
+**What we track:** page views, feature usage (which tools you use and how often), UI interactions, and error rates. We use this to prioritise improvements and fix bugs.
+
+**What we never track:** the content of your notes, voice recordings, file contents, or any research data. Analytics events contain only action names and metadata (e.g., "Note Created", "Search Performed"), never the data itself.
+
+### Functional (requires consent)
+
+These cookies support optional product functionality.
+
+| Cookie / Storage | Purpose | Provider | Duration |
+|-----------------|---------|----------|----------|
+| Langfuse (if enabled) | AI response quality monitoring | [Langfuse](https://langfuse.com/privacy) | Session |
+
+## Third-party services
+
+Bower uses the following third-party services that may set cookies or process data:
+
+| Service | Purpose | Privacy policy |
+|---------|---------|---------------|
+| Firebase Authentication | Sign-in and identity verification | [Firebase Privacy](https://firebase.google.com/support/privacy) |
+| PostHog | Product analytics and feature flags | [PostHog Privacy](https://posthog.com/privacy) |
+| Cloudflare Turnstile | Bot protection during sign-up | [Cloudflare Privacy](https://www.cloudflare.com/privacypolicy/) |
+
+For a complete list of services that process your data, see [Data privacy](/security/data-privacy).
+
+## Managing your cookies
+
+- **On first visit:** use the consent banner to make your choice.
+- **After sign-in:** go to **Settings > Privacy** to update your preferences.
+- **In your browser:** you can clear Bower's cookies and localStorage at any time via your browser settings. This will sign you out and reset your consent preference.
+
+## Questions
+
+If you have questions about how Bower handles cookies or your data, contact us at [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai).

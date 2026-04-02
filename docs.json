@@ -69,7 +69,8 @@
             "pages": [
               "security/audit-logs",
               "security/password-and-security",
-              "security/data-privacy"
+              "security/data-privacy",
+              "security/cookies"
             ]
           }
         ]
