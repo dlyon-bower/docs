@@ -71,7 +71,9 @@
               "security/sub-processors",
               "security/cookies",
               "security/audit-logs",
-              "security/password-and-security"
+              "security/password-and-security",
+              "security/privacy-policy",
+              "security/terms-of-service"
             ]
           }
         ]
