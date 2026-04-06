@@ -18,8 +18,7 @@
             "pages": [
               "index",
               "quickstart",
-              "getting-started/install-pwa",
-              "trust-centre/index"
+              "getting-started/install-pwa"
             ]
           },
           {
@@ -121,7 +120,5 @@
       "chatgpt"
     ]
   },
-  "footer": {
-    "socials": {}
-  }
+  "footer": {}
 }
