@@ -77,6 +77,7 @@
               "trust-centre/sub-processors",
               "trust-centre/cookies",
               "trust-centre/audit-logs",
+              "trust-centre/hipaa-compliance",
               "trust-centre/password-and-security",
               "trust-centre/privacy-policy",
               "trust-centre/terms-of-service"

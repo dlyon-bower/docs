@@ -1,9 +1,9 @@
 ---
 title: "Manage your account"
-description: "Profile, notifications, security, and account settings."
+description: "Profile, privacy controls, data export, and account settings."
 ---
 
-Update your profile name, workspace name, and other account settings from the Settings panel.
+Update your profile, manage your privacy preferences, export your data, and control your account from the Settings panel.
 
 ## Update your profile name
 
@@ -29,14 +29,51 @@ Workspace names are visible to all members of that workspace. Changing the name 
 
 ## Change your email or password
 
-Email and password changes are managed from **Settings > Account > Security**. You'll be asked to verify your current password before making changes.
+Email and password changes are managed from **Settings > Security**. You'll be asked to verify your current password before making changes.
+
+## Privacy controls
+
+Your privacy preferences are in **Settings > Security > Privacy**.
+
+### Analytics cookies
+
+You can control whether Bower collects anonymous usage data. The toggle in the Privacy section lets you enable or disable analytics cookies at any time. When you disable analytics, the page reloads to clear any tracking scripts that were already loaded.
+
+This is the same choice you made on the cookie consent banner when you first signed in — you can change it whenever you like. For details on what is and isn't tracked, see the [cookie policy](/trust-centre/cookies).
+
+### Export your data
+
+Click **Export** in the Privacy section to download a JSON file containing all your personal data: your profile, workspace memberships, projects, artifacts, and audit history across all your workspaces.
+
+Data exports are rate-limited to one request per 24 hours.
+
+## Session management
+
+### Sign out
+
+Go to **Settings > Security > Account Access** and click **Sign out** to end your session on the current device. Other devices remain signed in.
+
+### Revoke all sessions
+
+If you suspect unauthorised access or have lost a device, click **Revoke all** in the Account Access section. This invalidates every active session across all devices immediately. You will be signed out and need to sign in again.
+
+### Automatic idle timeout
+
+Bower automatically signs you out after 30 minutes of inactivity. A warning appears 2 minutes before the timeout, giving you the option to stay signed in.
 
 ## Delete your account
 
 <Warning>
-Account deletion is permanent. Your notes, collections, and workspaces are removed and cannot be recovered.
+Account deletion is permanent and cannot be undone. We recommend exporting your data first.
 </Warning>
 
-To delete your account, go to **Settings > Account > Delete account**. You'll be asked to confirm by typing your email address.
+To delete your account, go to **Settings > Security > Danger Zone** and click **Delete my account**. You'll be asked to type "DELETE" to confirm.
 
-If you're the owner of a shared workspace, you'll need to transfer ownership to another admin before deleting your account.
+**What gets deleted:**
+- Your profile (email, name) and authentication record
+- Your workspace memberships and OAuth integrations
+- Workspaces where you are the sole member, including all content and files
+
+**What gets kept:**
+- In shared workspaces, your notes, files, and collections are preserved for the team. Ownership is transferred to the workspace admin.
+- Audit logs are anonymised — the record of actions is kept, but your identity is removed.
