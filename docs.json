@@ -63,10 +63,16 @@
               "workspaces-and-account/dark-mode",
               "workspaces-and-account/feedback"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Trust Centre",
+        "groups": [
           {
             "group": "Trust Centre",
             "pages": [
+              "trust-centre/index",
               "trust-centre/data-privacy",
               "trust-centre/sub-processors",
               "trust-centre/cookies",

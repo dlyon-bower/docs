@@ -1,0 +1,134 @@
+---
+title: "Trust Centre"
+description: "Security, privacy, and compliance at Bower. Your research data is protected at every layer."
+---
+
+<Note>
+**Bower is built for researchers who handle sensitive data.** Every feature — from capture to AI processing — is designed with security, privacy, and data isolation as defaults, not afterthoughts.
+</Note>
+
+## Security overview
+
+<CardGroup cols={3}>
+  <Card title="AES-256 encryption" icon="lock">
+    All data encrypted at rest using AES-256. All data in transit encrypted via TLS. No unencrypted paths exist.
+  </Card>
+  <Card title="Workspace isolation" icon="shield-halved">
+    Full database-level isolation between workspaces, enforced in middleware. No cross-workspace data leakage is possible.
+  </Card>
+  <Card title="Audit logging" icon="clock-rotate-left">
+    Every create, update, and delete action is logged with who, what, when, and field-level diffs. Exportable to CSV.
+  </Card>
+</CardGroup>
+
+<CardGroup cols={3}>
+  <Card title="Session management" icon="right-from-bracket">
+    30-minute inactivity timeout. Revoke all sessions instantly from settings. Token expiry enforced server-side.
+  </Card>
+  <Card title="Role-based access" icon="users-gear">
+    Four roles — Owner, Admin, Member, Viewer — with strict hierarchy enforced at the API level.
+  </Card>
+  <Card title="AI data handling" icon="brain">
+    Your content is processed for inference only. **Your data is never used to train AI models.**
+  </Card>
+</CardGroup>
+
+---
+
+## Compliance & data protection
+
+<CardGroup cols={2}>
+  <Card title="GDPR compliant" icon="scale-balanced">
+    Full data subject rights — export, deletion, and portability. Designated Data Protection Officer. 30-day response SLA on all requests.
+  </Card>
+  <Card title="Australian Privacy Act" icon="flag">
+    Operated by Benenota Pty Ltd (ABN 60 691 836 085), compliant with the Australian Privacy Principles (APPs).
+  </Card>
+</CardGroup>
+
+### Your data rights
+
+- **Export** — download a complete copy of all your personal data as JSON from **Settings > Privacy > Export my data**
+- **Delete** — permanently remove your account and all associated data from **Settings > Security > Danger Zone**
+- **Cookie control** — choose exactly which cookies Bower uses, changeable at any time from **Settings > Privacy**
+- **DPO contact** — reach our Data Protection Officer at [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai)
+
+---
+
+## Infrastructure & sub-processors
+
+All primary data is hosted on **Google Cloud Platform (us-central1)**. Every sub-processor operates under a Data Processing Agreement (DPA).
+
+<AccordionGroup>
+  <Accordion title="Infrastructure & hosting" icon="server">
+    | Service | Purpose | Location |
+    |---------|---------|----------|
+    | [Google Cloud Platform](https://cloud.google.com/terms/cloud-privacy-notice) | Database, file storage, compute, async jobs | US (us-central1) |
+    | [Firebase Authentication](https://firebase.google.com/support/privacy) | User authentication (email/password, Google OAuth) | US |
+    | [Cloudflare Turnstile](https://www.cloudflare.com/privacypolicy/) | Bot protection during sign-up | Global (edge) |
+  </Accordion>
+
+  <Accordion title="AI processing" icon="microchip-ai">
+    Your content is sent to these providers for inference only. **Your data is not used to train AI models.**
+
+    | Service | Purpose | Location |
+    |---------|---------|----------|
+    | [Google AI (Gemini, Vertex AI)](https://cloud.google.com/terms/cloud-privacy-notice) | AI chat (Bird), live mode, OCR, embeddings | US |
+    | [Google Cloud Speech-to-Text](https://cloud.google.com/terms/cloud-privacy-notice) | Voice note transcription | US |
+    | [Anthropic](https://www.anthropic.com/privacy) | AI chat (Bird), agent tasks | US |
+  </Accordion>
+
+  <Accordion title="Analytics & observability" icon="chart-line">
+    | Service | Purpose | Location |
+    |---------|---------|----------|
+    | [PostHog](https://posthog.com/privacy) | Product analytics, feature flags (requires [cookie consent](/trust-centre/cookies)) | US/EU |
+    | [Langfuse](https://langfuse.com/privacy) | AI response quality monitoring | EU/US |
+
+    Analytics **never** tracks the content of your notes, recordings, or research data.
+  </Accordion>
+
+  <Accordion title="Document processing" icon="file-lines">
+    | Service | Purpose | Location |
+    |---------|---------|----------|
+    | [TipTap](https://tiptap.dev/privacy-policy) | Rich text editing, DOCX export/import | EU |
+  </Accordion>
+</AccordionGroup>
+
+<sub>Sub-processor list reviewed quarterly. Last reviewed: April 2026.</sub>
+
+---
+
+## Policies & documentation
+
+<CardGroup cols={2}>
+  <Card title="Data privacy" icon="eye-slash" href="/trust-centre/data-privacy">
+    Encryption, workspace isolation, access controls, deletion, and your data rights — the full technical breakdown.
+  </Card>
+  <Card title="Sub-processors" icon="building" href="/trust-centre/sub-processors">
+    Complete list of third-party services that process data on behalf of Bower, with DPA coverage.
+  </Card>
+  <Card title="Cookie policy" icon="cookie-bite" href="/trust-centre/cookies">
+    What cookies Bower uses, why, and how to control them. Essential vs. analytics categories.
+  </Card>
+  <Card title="Audit logs" icon="clock-rotate-left" href="/trust-centre/audit-logs">
+    Track every change in your workspace — who did what, when, with field-level diffs.
+  </Card>
+  <Card title="Password & security" icon="lock" href="/trust-centre/password-and-security">
+    Manage your password, sign-in methods, sessions, and account security settings.
+  </Card>
+  <Card title="Privacy Policy" icon="scale-balanced" href="/trust-centre/privacy-policy">
+    Full legal privacy policy — how we collect, use, store, and protect your personal data.
+  </Card>
+  <Card title="Terms of Service" icon="file-contract" href="/trust-centre/terms-of-service">
+    Terms governing your use of the Bower platform.
+  </Card>
+</CardGroup>
+
+---
+
+## Questions?
+
+If you have security questions, need a DPA, or want to report a vulnerability, contact us:
+
+- **Data Protection Officer:** [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai)
+- **General support:** [hello@bowerlabs.ai](mailto:hello@bowerlabs.ai)
