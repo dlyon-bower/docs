@@ -18,7 +18,8 @@
             "pages": [
               "index",
               "quickstart",
-              "getting-started/install-pwa"
+              "getting-started/install-pwa",
+              "trust-centre/index"
             ]
           },
           {
