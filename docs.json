@@ -28,6 +28,7 @@
               "capture/mobile-capture",
               "capture/batch-import",
               "capture/editor",
+              "capture/annotations-and-diagrams",
               "capture/keyboard-shortcuts"
             ]
           },
