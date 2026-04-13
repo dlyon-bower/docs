@@ -1,0 +1,88 @@
+---
+title: "Plans & billing"
+description: "Manage your workspace subscription, upgrade your plan, and update payment methods."
+---
+
+Bower offers three workspace plans: **Free**, **Pro**, and **Team**. Each plan
+includes different storage limits, member caps, and feature access.
+
+## Plans overview
+
+| | Free | Pro | Team |
+| --- | --- | --- | --- |
+| **Storage** | 1 GB | 50 GB | 100 GB |
+| **Members** | 3 | 10 | 50 |
+| **Notes & search** | Included | Included | Included |
+| **AI chat** | — | Included | Included |
+| **OCR processing** | — | Included | Included |
+| **Voice transcription** | — | Included | Included |
+| **Bulk export** | — | Included | Included |
+| **Priority support** | — | — | Included |
+| **Monthly price** | Free | $35/mo | $179/mo |
+| **Annual price** | Free | $29/mo | $149/mo |
+
+Annual billing saves approximately 20% compared to monthly.
+
+## View your current plan
+
+Go to **Settings > Billing**. You'll see your current plan, billing cycle, next
+billing date, and usage bars for storage and members.
+
+<Note>
+The Billing tab is only visible to workspace owners and admins.
+</Note>
+
+## Upgrade your plan
+
+<Steps>
+  <Step title="Go to Settings > Billing" />
+  <Step title="Click Upgrade Plan" />
+  <Step title="Choose between Monthly and Annual billing" />
+  <Step title="Select Pro or Team" />
+  <Step title="Complete payment via Stripe Checkout" />
+</Steps>
+
+You can pay with a credit/debit card or Revolut Pay. After payment, your
+workspace is upgraded immediately — no need to sign out or refresh.
+
+## Manage your subscription
+
+Click **Manage Billing** in the Billing tab to open the Stripe Customer Portal.
+From there you can:
+
+- Change your plan (upgrade or downgrade)
+- Switch between monthly and annual billing
+- Update your payment method
+- View past invoices and receipts
+- Cancel your subscription
+
+<Note>
+Plan changes take effect immediately. If you downgrade, you'll retain access to
+your current plan until the end of the billing period.
+</Note>
+
+## What happens if payment fails
+
+If a payment fails, your workspace enters a **past due** state. You'll see a
+warning banner in the Billing tab asking you to update your payment method.
+Stripe automatically retries failed payments several times over the following
+weeks. If all retries fail, your workspace is downgraded to the Free plan.
+
+While in past-due state, your existing data is preserved — nothing is deleted.
+Features gated behind your paid plan may become restricted until payment is
+resolved.
+
+## Cancellation
+
+You can cancel your subscription at any time from the Stripe Customer Portal
+(Settings > Billing > Manage Billing). After cancellation:
+
+- You keep access to your paid plan until the end of the current billing period
+- At period end, your workspace moves to the Free plan
+- Your data is preserved — nothing is deleted
+- Storage and member limits revert to Free plan levels
+
+## Workspace deletion and billing
+
+If you delete a workspace that has an active subscription, the subscription is
+cancelled automatically. No further charges will occur.

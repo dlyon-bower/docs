@@ -61,6 +61,7 @@
               "workspaces-and-account/invite-team-members",
               "workspaces-and-account/switch-workspaces",
               "workspaces-and-account/manage-account",
+              "workspaces-and-account/billing",
               "workspaces-and-account/dark-mode",
               "workspaces-and-account/feedback"
             ]
