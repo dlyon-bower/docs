@@ -3,30 +3,71 @@ title: "Plans & billing"
 description: "Manage your workspace subscription, upgrade your plan, and update payment methods."
 ---
 
-Bower offers three workspace plans: **Free**, **Pro**, and **Team**. Each plan
-includes different storage limits, member caps, and feature access.
+Bower offers three workspace plans: **Starter**, **Pro**, and **Team**. Each
+plan includes different capacity, member caps, and feature access.
 
 ## Plans overview
 
-| | Free | Pro | Team |
-| --- | --- | --- | --- |
-| **Storage** | 1 GB | 50 GB | 100 GB |
-| **Members** | 3 | 10 | 50 |
-| **Notes & search** | Included | Included | Included |
-| **AI chat** | — | Included | Included |
-| **OCR processing** | — | Included | Included |
-| **Voice transcription** | — | Included | Included |
-| **Bulk export** | — | Included | Included |
-| **Priority support** | — | — | Included |
-| **Monthly price** | Free | $35/mo | $179/mo |
-| **Annual price** | Free | $29/mo | $149/mo |
+{/* PRICING_TABLE:AUTO_GENERATED START — do not edit; run `pnpm docs:pricing:generate` */}
 
-Annual billing saves approximately 20% compared to monthly.
+| | **Starter** | **Pro** | **Team** |
+| --- | :---: | :---: | :---: |
+| **Monthly price** | Free | $35/mo | $179/mo |
+| **Annual price (per month)** | Free | $29/mo | $149/mo |
+
+Annual billing saves up to 17% compared to monthly. All paid plans include a 14-day free trial — no credit card required.
+
+### Workspace capacity
+
+| | **Starter** | **Pro** | **Team** |
+| --- | :---: | :---: | :---: |
+| Workspaces you can own | 1 | 5 | Unlimited |
+| Members per workspace | 2 | 10 | 50 |
+| Storage per workspace | 1 GB | 50 GB | 100 GB |
+
+### AI research partner
+
+| | **Starter** | **Pro** | **Team** |
+| --- | :---: | :---: | :---: |
+| Bird chat, search and summaries | ✓ | ✓ | ✓ |
+| Auto-organise captured content | ✓ | ✓ | ✓ |
+| Live agent mode (voice + video aware) | ✓ | ✓ | ✓ |
+| Unlimited voice transcription | ✓ | ✓ | ✓ |
+| Photo OCR with scientific vocab | ✓ | ✓ | ✓ |
+
+### Capture and knowledge
+
+| | **Starter** | **Pro** | **Team** |
+| --- | :---: | :---: | :---: |
+| Rich editor with LaTeX, tables, diagrams | ✓ | ✓ | ✓ |
+| Protocols, collections and tags | ✓ | ✓ | ✓ |
+| Bidirectional linked entities | ✓ | ✓ | ✓ |
+| Hybrid semantic + keyword search | ✓ | ✓ | ✓ |
+| Mobile PWA with quick capture | ✓ | ✓ | ✓ |
+| Export to PDF, Markdown, HTML | ✓ | ✓ | ✓ |
+
+### Collaboration and sharing
+
+| | **Starter** | **Pro** | **Team** |
+| --- | :---: | :---: | :---: |
+| Workspace members and roles | ✓ | ✓ | ✓ |
+| Public share links (any note, protocol or artifact) | — | ✓ | ✓ |
+
+### Compliance and audit
+
+| | **Starter** | **Pro** | **Team** |
+| --- | :---: | :---: | :---: |
+| Audit history retention | 30 days | 7 years | Unlimited |
+| PHI (HIPAA-compliant) mode | — | ✓ | ✓ |
+| Priority support | — | — | ✓ |
+
+{/* PRICING_TABLE:AUTO_GENERATED END */}
 
 ## View your current plan
 
 Go to **Settings > Billing**. You'll see your current plan, billing cycle, next
-billing date, and usage bars for storage and members.
+billing date, and usage bars for storage, members, and owned workspaces. Click
+**Compare all features** above the plan cards to see the full matrix.
 
 <Note>
 The Billing tab is only visible to workspace owners and admins.
@@ -36,14 +77,14 @@ The Billing tab is only visible to workspace owners and admins.
 
 <Steps>
   <Step title="Go to Settings > Billing" />
-  <Step title="Click Upgrade Plan" />
-  <Step title="Choose between Monthly and Annual billing" />
-  <Step title="Select Pro or Team" />
+  <Step title="Click Monthly or Annual above the plan cards" />
+  <Step title="Choose Pro or Team" />
   <Step title="Complete payment via Stripe Checkout" />
 </Steps>
 
-You can pay with a credit/debit card or Revolut Pay. After payment, your
-workspace is upgraded immediately — no need to sign out or refresh.
+All paid plans include a 14-day free trial — no credit card required to start.
+You can pay with a credit or debit card. After payment (or during the trial),
+your workspace is upgraded immediately — no need to sign out or refresh.
 
 ## Manage your subscription
 
@@ -57,8 +98,8 @@ From there you can:
 - Cancel your subscription
 
 <Note>
-Plan changes take effect immediately. If you downgrade, you'll retain access to
-your current plan until the end of the billing period.
+Upgrades take effect immediately with a prorated charge. Downgrades take effect
+at the end of your current billing period — you keep paid features until then.
 </Note>
 
 ## What happens if payment fails
@@ -66,7 +107,7 @@ your current plan until the end of the billing period.
 If a payment fails, your workspace enters a **past due** state. You'll see a
 warning banner in the Billing tab asking you to update your payment method.
 Stripe automatically retries failed payments several times over the following
-weeks. If all retries fail, your workspace is downgraded to the Free plan.
+weeks. If all retries fail, your workspace is downgraded to the Starter plan.
 
 While in past-due state, your existing data is preserved — nothing is deleted.
 Features gated behind your paid plan may become restricted until payment is
@@ -78,9 +119,19 @@ You can cancel your subscription at any time from the Stripe Customer Portal
 (Settings > Billing > Manage Billing). After cancellation:
 
 - You keep access to your paid plan until the end of the current billing period
-- At period end, your workspace moves to the Free plan
+- At period end, your workspace moves to the Starter plan
 - Your data is preserved — nothing is deleted
-- Storage and member limits revert to Free plan levels
+- Storage, member, workspace, and audit-retention limits revert to Starter levels
+- Public share links will no longer be accessible
+
+You can reactivate any time before period end from the same portal to keep your
+plan.
+
+## Student discount
+
+Students and researchers at accredited institutions can request a free Pro
+plan. Click **Free for students** under the Pro card on the Billing tab to get
+the contact details — we review requests manually.
 
 ## Workspace deletion and billing
 
