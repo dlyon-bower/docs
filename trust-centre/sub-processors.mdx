@@ -29,9 +29,11 @@ When you use AI features (Bird chat, voice transcription, photo text extraction,
 
 | Service | Purpose | Data processed | Location |
 |---------|---------|---------------|----------|
-| [Stripe](https://stripe.com/privacy) | Subscription billing, payment processing, customer portal | Payment methods, transaction data, billing email | US |
+| [Stripe Payments Australia Pty Ltd](https://stripe.com/privacy) ([DPA](https://stripe.com/au/legal/dpa)) | Subscription billing, payment processing, customer portal, tax calculation | Billing email, payment method tokens, transaction amounts, tax jurisdiction, subscription metadata | US (processed globally per the Stripe DPA) |
 
-Bower uses Stripe for all payment processing. Card data is handled entirely by Stripe (PCI SAQ-A) and never touches Bower servers. Revolut Pay is available as an additional payment method.
+Bower uses Stripe for all payment processing. Card numbers, CVCs, and full payment details are handled entirely by Stripe's hosted Checkout and Customer Portal surfaces — they never touch Bower servers. Bower's systems only see opaque Stripe IDs (`cus_…`, `sub_…`) and transaction amounts. Stripe is PCI-DSS Level 1 certified; Bower's integration is PCI SAQ-A (the lowest-scope form).
+
+The [Stripe Data Processing Agreement](https://stripe.com/au/legal/dpa) applies automatically to our use of the service under Australian, EU (GDPR), and UK (UK-GDPR) data-protection law — no manual signature required; acceptance is deemed by use of the Stripe platform.
 
 ## Analytics & observability
 
@@ -48,7 +50,7 @@ All primary data (database, files, backups) is stored in Google Cloud's **us-cen
 
 We review our sub-processor list quarterly. If we add a new sub-processor that processes personal data, we will update this page. Material changes will be communicated via email to workspace owners.
 
-**Last reviewed:** April 2026
+**Last reviewed:** 20 April 2026
 
 ## Questions
 
