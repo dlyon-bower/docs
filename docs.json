@@ -29,6 +29,7 @@
               "capture/batch-import",
               "capture/editor",
               "capture/annotations-and-diagrams",
+              "capture/version-history",
               "capture/keyboard-shortcuts"
             ]
           },

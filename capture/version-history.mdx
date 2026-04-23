@@ -1,0 +1,67 @@
+---
+title: "Version history"
+description: "Automatic snapshots of every note, previewed side-by-side with one-click restore."
+---
+
+Bower keeps a running history of every note so you can look back at an earlier draft or recover something you accidentally overwrote. You never have to remember to save — Bower captures versions as you work.
+
+## How it works
+
+As you edit a note, Bower quietly records snapshots in the background. Each snapshot is a complete copy of your note at that moment, including any diagrams you drew inside it. Snapshots are private to your workspace — only workspace members can see them, and only the note's workspace ever has access.
+
+Snapshots are captured automatically:
+
+- While you're typing — at most one new snapshot every 10 minutes, and only if the content has actually changed.
+- When you leave the page (close the tab, navigate away, or switch apps).
+- Right before you restore an older version, so every restore is reversible.
+
+## Viewing history
+
+1. Open the note you want to explore.
+2. Click the **⋮** (kebab) menu in the top right.
+3. Choose **Version history**.
+
+The version history view opens full-screen, with a preview of the currently selected version on the left and the list of versions on the right. Each row shows when the version was saved and who saved it (your own versions say "You").
+
+Click any row to preview that version in the main pane. The preview is read-only — you can read, scroll, and copy text, but you can't accidentally edit historical content.
+
+On mobile, the list fills the screen. Tap a version to preview it; use the back arrow at the top left to return to the list.
+
+## Labelling a version
+
+Some versions are worth remembering — the snapshot right before a major rewrite, or the last draft you showed a colleague. You can add a short label to any version in the list so it's easier to spot later.
+
+1. Hover over the version you want to label (on mobile, tap into the list first).
+2. Click the **pencil** icon that appears on the right.
+3. Type a short label, like *"Before methods section rewrite"*, and press Enter or click **Save**.
+
+Labelled versions show the label in italics underneath the timestamp. To remove a label, open the rename dialog and clear the input before saving.
+
+## Restoring a version
+
+When you find the version you want:
+
+1. Select it in the list to preview.
+2. Click **Restore** in the bottom-right of the view.
+3. Confirm the dialog.
+
+Bower saves a snapshot of your current note first (that's the *pre-restore* row you'll see at the top of the list afterwards), then replaces the note content — including any diagrams — with the historical version. If you change your mind, you can restore the pre-restore snapshot just like any other version.
+
+## How long versions are kept
+
+Each workspace's version history window depends on the subscription plan:
+
+| Plan      | History kept |
+| --------- | ------------ |
+| Starter   | 7 days       |
+| Pro       | 1 year       |
+| Team      | Unlimited    |
+
+If your plan has a finite window, older versions are hidden from the list — an upgrade prompt appears at the bottom of the list with a one-click path to the billing settings. Your current note and all its attachments are never affected by the retention window.
+
+Notes that are in the Trash retain their full history for the whole 30-day trash window, so you can still restore them after pulling the note back out.
+
+## Limits and edge cases
+
+- **Team collaboration.** If another workspace member restores a version while you're editing, your editor will pick up the restored content the next time it refreshes. For this reason, coordinate before restoring on shared notes.
+- **Inline images.** Images in historical versions continue to work even after they're removed from the current note — Bower keeps images on disk until every version that references them expires.
