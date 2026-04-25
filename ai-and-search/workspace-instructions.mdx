@@ -1,0 +1,156 @@
+---
+title: "Workspace instructions"
+description: "Standing instructions for Bird that apply to every conversation in this workspace — organisational policies, compliance expectations, vocabulary, and team conventions."
+---
+
+Workspace instructions are a short note shared across your lab or organisation that tells Bird how *this* workspace works. They're read at the start of every conversation in the workspace and apply to every member.
+
+If personal preferences are "this is me", workspace instructions are "this is how we do things here".
+
+<Note>
+  **Guidance, not enforcement.** Workspace instructions are direction Bird does its best to follow, not a hard policy engine. Treat them the way you'd treat a written brief to a new lab member: most of the time they shape behaviour as intended, but they aren't a substitute for technical controls (like HIPAA mode), access restrictions, or human review on high-stakes work. For anything that *must* be enforced, pair workspace instructions with the appropriate setting or policy.
+</Note>
+
+## Why use them
+
+Organisations have conventions and policies that aren't obvious to a general-purpose assistant. Approved terminology ("subjects", not "patients"). Citation style. Whether unpublished data can appear in shareable summaries. Whether Bird should respond to media or external-collaboration requests, or escalate them.
+
+Without workspace instructions, every member ends up repeating those rules in their own conversations — and the rules drift. With them, Bird gets the same brief at the start of every conversation across the team.
+
+The benefits across a team:
+
+<AccordionGroup>
+  <Accordion title="Organisational policies and compliance posture">
+    "Treat unpublished data as confidential — never include it in outputs shared externally." "Escalate media or external-collaboration requests rather than answering directly." Codify the rules your org cares about so Bird is briefed on them in every conversation.
+  </Accordion>
+  <Accordion title="Shared vocabulary">
+    Lab-specific terminology, naming conventions, and method shorthand are encoded once. Bird uses your team's terms instead of generic ones.
+  </Accordion>
+  <Accordion title="Standing instructions for everyone">
+    "Always include a Methods bullet when summarising a paper." "Default reference genome is mm10 unless stated otherwise." Set once, applied across the team.
+  </Accordion>
+  <Accordion title="Onboarding new members">
+    A new postdoc joins the workspace and Bird already knows your conventions on day one. They don't have to discover them by getting things wrong first.
+  </Accordion>
+  <Accordion title="Recurring entities">
+    People, active projects, key methods, instruments that come up often — Bird has them in context without anyone having to explain.
+  </Accordion>
+  <Accordion title="Negative-space rules">
+    "Don't invent citations." "Don't recommend external collaborators without explicit ask." Telling Bird what *not* to do is often more powerful than telling it what to do.
+  </Accordion>
+</AccordionGroup>
+
+## How to write them
+
+Free text. Write it like a lab handbook entry, not a rules document. Bird reads it as natural language.
+
+A useful starting structure:
+
+- **About this workspace** — one or two sentences on what the lab or organisation does
+- **Policies and compliance posture** — confidentiality rules, escalation paths, data-handling expectations
+- **Vocabulary and conventions** — terms, shorthands, naming schemes
+- **Standing instructions** — behaviour Bird should always follow
+- **Recurring entities** — people, active projects, key methods, instruments
+- **Don'ts** — things that should never happen
+
+### Example
+
+```
+We're a marine biology lab at the University of Bristol focused on coral
+alkalinity tolerance. Field samples are collected weekly from three reef sites
+and processed within 24 hours.
+
+Policies:
+- Treat unpublished data as confidential — don't include raw measurements
+  in any output that may be shared outside the lab.
+- Escalate media or external-collaboration requests to the PI rather than
+  answering directly.
+
+Vocabulary:
+- We call participating reef sites "stations", not "sites". Stations are
+  numbered S1, S2, S3.
+- "Batch" refers to a weekly collection cycle, not an individual sample.
+
+Standing instructions:
+- Citation style is AMA. No footnotes.
+- When summarising a paper, always include a Methods bullet.
+- When proposing collaborators, only suggest current lab members listed in
+  the People section below.
+
+People:
+- Dr. Lin (PI), Sara (postdoc), Tom (PhD), Alex (PhD)
+
+Active projects:
+- Project Atlas — coral alkalinity tolerance
+- Project Reef-Watch — site monitoring infrastructure
+
+Don't:
+- Don't recommend external collaborators without an explicit ask.
+- Don't invent citations or fabricate sources.
+```
+
+## Where to set them
+
+**Settings → Workspace → Workspace instructions for Bird**
+
+Workspace instructions are **edited only by workspace owners and admins**. Members and viewers see them in read-only mode so they understand what's shaping Bird's behaviour, but can't change them.
+
+Changes apply to new conversations across the whole workspace — Bird reads them at the start of each conversation, so existing chats keep their original context until reopened.
+
+Workspace instructions have a **6,000-character cap** — about 1,000 words, enough for a substantial handbook of conventions. The character counter under the editor turns amber as you approach the limit and red if you exceed it. If you're near the cap, prune older items rather than expanding — focused instructions work better than long ones.
+
+## HIPAA workspaces
+
+If your workspace has HIPAA mode enabled, Bird automatically adds a locked compliance section to its system instructions. Workspace instructions must not contain:
+
+- Patient identifiers
+- Dates of birth
+- Medical record numbers
+- Phone numbers in a structured pattern
+
+Saves are rejected if any of those patterns are detected. The audit trail never stores workspace instruction content for any workspace — the HIPAA rejection on save is an explicit defence-in-depth on top.
+
+<Note>
+  Workspace instructions are for **workspace structure, conventions, and policy guidance only** — never for sensitive subject data. Patient records and study data live in encrypted notes and are referenced by ID, not by name in instructions.
+</Note>
+
+## Privacy and audit
+
+Workspace instructions are shared with everyone in the workspace, so write with that in mind. Don't put anything there that you wouldn't want every member to read.
+
+For accountability:
+
+- Every save is recorded in the workspace audit log — who edited it, when, and the character count at save time. View it under **Settings → Security → Audit log**.
+- Past content is **not** stored in audit. The audit row records that an edit happened, not what changed. This is deliberate: admin-written instructions can contain sensitive standing rules, and we don't want removed content surviving in a place every member can read.
+- Recovery of past content, if ever needed, is via DB backups — not via audit.
+
+## Workspace instructions vs. personal preferences
+
+Two layers, two scopes:
+
+|  | Workspace instructions | [Personal preferences](/ai-and-search/personal-preferences) |
+| --- | --- | --- |
+| Visible to | All workspace members | Only the user |
+| Edited by | Owners and admins | The user themselves |
+| Use it for | Org policies, compliance posture, lab vocabulary, standing instructions | Your role, preferences, recurring requests |
+| Applies to | Every conversation in the workspace | Every conversation where you're the requester |
+
+Both are loaded into Bird's context simultaneously. Workspace instructions take precedence on compliance and shared conventions; personal preferences win on individual style. Neither is strictly enforced — both are guidance Bird does its best to follow.
+
+## Tips
+
+<Tip>
+  **Treat them like a living handbook.** When the lab adopts a new convention or retires an old one, update workspace instructions the same week. Stale conventions are worse than no conventions.
+</Tip>
+
+<Tip>
+  **Lead with the policies you most need Bird to honour.** Compliance and confidentiality items at the top, vocabulary and recurring entities further down. Bird reads it all, but the order helps you scan it during reviews.
+</Tip>
+
+<Tip>
+  **Negative-space rules are powerful.** "Don't recommend external collaborators" is often more useful than "Recommend internal collaborators only" — it gives Bird a clear boundary without prescribing every alternative.
+</Tip>
+
+<Tip>
+  **Review with the team quarterly.** Workspace instructions are shared infrastructure. A short read-through at lab meetings catches stale items and surfaces new conventions worth adding.
+</Tip>

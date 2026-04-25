@@ -37,8 +37,8 @@
             "group": "AI & Search",
             "pages": [
               "ai-and-search/bird-ai-assistant",
-              "ai-and-search/personal-context",
-              "ai-and-search/workspace-memory",
+              "ai-and-search/personal-preferences",
+              "ai-and-search/workspace-instructions",
               "ai-and-search/live-agent-mode",
               "ai-and-search/hybrid-search",
               "capture/ai-titles"
@@ -126,5 +126,19 @@
       "chatgpt"
     ]
   },
+  "redirects": [
+    {
+      "source": "/ai-and-search/workspace-memory",
+      "destination": "/ai-and-search/workspace-instructions"
+    },
+    {
+      "source": "/ai-and-search/workspace-context",
+      "destination": "/ai-and-search/workspace-instructions"
+    },
+    {
+      "source": "/ai-and-search/personal-context",
+      "destination": "/ai-and-search/personal-preferences"
+    }
+  ],
   "footer": {}
 }
