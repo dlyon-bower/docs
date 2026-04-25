@@ -37,6 +37,8 @@
             "group": "AI & Search",
             "pages": [
               "ai-and-search/bird-ai-assistant",
+              "ai-and-search/personal-context",
+              "ai-and-search/workspace-memory",
               "ai-and-search/live-agent-mode",
               "ai-and-search/hybrid-search",
               "capture/ai-titles"
