@@ -32,9 +32,6 @@ The benefits across a team:
   <Accordion title="Onboarding new members">
     A new postdoc joins the workspace and Bird already knows your conventions on day one. They don't have to discover them by getting things wrong first.
   </Accordion>
-  <Accordion title="Recurring entities">
-    People, active projects, key methods, instruments that come up often — Bird has them in context without anyone having to explain.
-  </Accordion>
   <Accordion title="Negative-space rules">
     "Don't invent citations." "Don't recommend external collaborators without explicit ask." Telling Bird what *not* to do is often more powerful than telling it what to do.
   </Accordion>
@@ -50,15 +47,18 @@ A useful starting structure:
 - **Policies and compliance posture** — confidentiality rules, escalation paths, data-handling expectations
 - **Vocabulary and conventions** — terms, shorthands, naming schemes
 - **Standing instructions** — behaviour Bird should always follow
-- **Recurring entities** — people, active projects, key methods, instruments
 - **Don'ts** — things that should never happen
+
+<Warning>
+  **Don't list people, active projects, or anything else that changes often.** Workspace instructions are read at the start of every conversation, so anything in here is on by default. Things that turn over (postdocs joining, projects starting, samples in flight) belong in your notes and projects, where Bird can look them up live — not in a static handbook that has to be hand-edited every time the lab changes.
+</Warning>
 
 ### Example
 
 ```
 We're a marine biology lab at the University of Bristol focused on coral
-alkalinity tolerance. Field samples are collected weekly from three reef sites
-and processed within 24 hours.
+alkalinity tolerance. Field samples are collected weekly from three reef
+sites and processed within 24 hours.
 
 Policies:
 - Treat unpublished data as confidential — don't include raw measurements
@@ -74,19 +74,12 @@ Vocabulary:
 Standing instructions:
 - Default to SI units and British English spelling.
 - When summarising a paper, always include a Methods bullet.
-- When proposing collaborators, only suggest current lab members listed in
-  the People section below.
-
-People:
-- Dr. Lin (PI), Sara (postdoc), Tom (PhD), Alex (PhD)
-
-Active projects:
-- Project Atlas — coral alkalinity tolerance
-- Project Reef-Watch — site monitoring infrastructure
+- When asked for collaborators, search workspace notes first; don't
+  recommend external collaborators without an explicit ask.
 
 Don't:
-- Don't recommend external collaborators without an explicit ask.
 - Don't invent citations or fabricate sources.
+- Don't paraphrase published methods — link to the source.
 ```
 
 ## Where to set them
@@ -97,7 +90,7 @@ Workspace instructions are **edited only by workspace owners and admins**. Membe
 
 Changes apply to new conversations across the whole workspace — Bird reads them at the start of each conversation, so existing chats keep their original context until reopened.
 
-Workspace instructions have a **6,000-character cap** — about 1,000 words, enough for a substantial handbook of conventions. The character counter under the editor turns amber as you approach the limit and red if you exceed it. If you're near the cap, prune older items rather than expanding — focused instructions work better than long ones.
+Workspace instructions have a **3,000-character cap** — about 500 words. That's deliberately tight: it forces you to keep the field focused on policies and conventions that genuinely apply to every conversation, instead of letting it drift into a handbook of project notes. The character counter under the editor turns amber as you approach the limit and red if you exceed it. If you're near the cap, prune older items rather than expanding.
 
 ## HIPAA workspaces
 
@@ -144,7 +137,7 @@ Both are loaded into Bird's context simultaneously. Workspace instructions take 
 </Tip>
 
 <Tip>
-  **Lead with the policies you most need Bird to honour.** Compliance and confidentiality items at the top, vocabulary and recurring entities further down. Bird reads it all, but the order helps you scan it during reviews.
+  **Lead with the policies you most need Bird to honour.** Compliance and confidentiality items at the top, vocabulary and conventions further down. Bird reads it all, but the order helps you scan it during reviews.
 </Tip>
 
 <Tip>
