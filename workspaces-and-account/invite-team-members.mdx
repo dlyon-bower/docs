@@ -19,10 +19,16 @@ Invite links expire after **30 days**. If a link expires, generate a new one.
 
 ## Roles
 
+Bower has four workspace roles:
+
 | Role | What they can do |
 | --- | --- |
-| Member | Capture, view, edit, and search all notes in the workspace |
-| Admin | Everything a Member can do, plus: remove members, change workspace settings, manage billing |
+| Owner | Everything an Admin can do. Every workspace has at least one Owner — typically the person who created it. The Owner role is automatically assigned when you create a workspace and can be transferred to another Admin. |
+| Admin | Everything a Member can do, plus: invite and remove members, change member roles, edit workspace settings, manage billing, and manage [workspace memory](/ai-and-search/workspace-instructions). |
+| Member | Capture, view, edit, and search all notes, protocols, and collections in the workspace. The default role for invited collaborators. |
+| Viewer | Read-only access. Viewers can browse and search every note, protocol, collection, and attachment in the workspace but cannot create, edit, or delete content. Editor toolbars, tag inputs, link controls, voice and image capture, version-history restore, and the Trash and Audit pages are all hidden. Use Viewer for stakeholders who need visibility without the risk of accidental edits. |
+
+A workspace must always have at least one Admin or Owner — Bower will block the last admin/owner from being downgraded or removed.
 
 ## Pending invites
 
@@ -30,10 +36,16 @@ Invites that haven't been accepted yet are visible in **Settings > Workspace Man
 
 ## What members can see
 
-All members of a workspace can see all notes and collections in that workspace by default. There are no per-collection access restrictions.
+Everyone in a workspace — including Viewers — can see all notes, protocols, and collections in that workspace by default. There are no per-collection access restrictions; access is granted at the workspace level.
 
 Members cannot see notes or collections in your other workspaces — workspaces are fully isolated from each other.
 
+## Changing a member's role
+
+Admins and Owners can change a member's role from **Settings > Workspace Management**. Click the role next to a member's name and pick a new one.
+
+A workspace must always have at least one Admin or Owner — Bower will block the change if it would leave the workspace without one.
+
 ## Removing a member
 
-To remove someone from the workspace, go to **Settings > Members**, find their name, and click **Remove**. Their notes remain in the workspace — only their access is revoked.
+To remove someone from the workspace, go to **Settings > Workspace Management**, find their name, and choose **Remove**. Their notes remain in the workspace — only their access is revoked. Only Admins and Owners can remove members.
