@@ -5,10 +5,18 @@ description: "Cross-reference notes, protocols, and collections to build connect
 
 Linked entities let you connect related items in your workspace. Link a note to the protocol it follows, connect observations to the collection they belong to, or cross-reference two notes that cover the same sample.
 
+## Why link entities
+
+A workspace built only of folders forces you to put each item in exactly one place. Real research isn't that tidy — a single observation often relates to a protocol, a collection of samples, and another note from last week's meeting. Linking lets all of those connections coexist without duplicating content.
+
+- **Find related work fast.** When you open a note, every linked entity is one click away — no need to search or remember where you filed it.
+- **Build context for AI features.** When you ask Bird a question or start a Live session, links give the AI a richer picture of how your work fits together.
+- **Surface adjacent ideas.** Bower's AI also [suggests likely links](/ai-and-search/inferred-links) between similar notes, so you don't miss connections you didn't think to make.
+
 ## How to link entities
 
 1. Open a note, protocol, or collection.
-2. Click the **link** button (chain icon) in the toolbar area, next to tags.
+2. Click the **+ Link** pill (next to **+ Add tags**, just above the editor).
 3. The command palette opens — search for the entity you want to link to.
 4. Select it. The link is created in both directions.
 
@@ -26,13 +34,19 @@ Links are bidirectional — if Note A is linked to Protocol B, Protocol B also s
 
 ## Viewing linked entities
 
-Linked entities appear as chips below the editor. Each chip shows:
+Linked entities appear as chips on the same row as your tags, just above the editor. Each chip shows:
 
 - The entity type icon
 - The entity title
 - A menu with options to **open** the linked entity or **unlink** it
 
-Click a chip to navigate directly to that entity.
+Click a chip to navigate directly to that entity. If you have more than three links, the row collapses with a **+N more** toggle to keep things compact.
+
+## Inferred (AI-suggested) links
+
+Bower also surfaces suggested links between notes that look related, drawn with a **dashed border** and a sparkle icon to set them apart from links you created yourself. Each suggestion can be **confirmed** (turning it into a regular link) or **dismissed** (so the AI won't suggest that pair again).
+
+See [Inferred links](/ai-and-search/inferred-links) for a full walkthrough.
 
 ## Unlinking
 
