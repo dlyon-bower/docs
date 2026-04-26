@@ -1,0 +1,38 @@
+---
+title: "Inferred links"
+description: "AI-suggested connections between related notes and protocols, with one-click confirm or dismiss."
+---
+
+When two notes or protocols cover similar ground, Bower's AI quietly surfaces the connection as a **suggested link**. You'll see them as chips with a **dashed border** and a small ✨ sparkle icon — visually distinct from the solid-bordered links you've created yourself.
+
+Hover an inferred chip and you'll see a tooltip like _"Suggested by AI · 83% similar"_ — the percentage is how confidently the AI thinks the two pieces of content are about the same thing. Anything below 72% similarity is ignored, so you only ever see strong candidates.
+
+## Confirm or dismiss
+
+Each inferred chip's menu offers two actions instead of "Unlink":
+
+- **Confirm link** — promotes the suggestion to a regular user-created link. The chip flips to a solid border and won't be re-suggested. Use this when the AI got it right.
+- **Dismiss** — removes the suggestion and remembers your decision so the AI won't surface that pair again, even if you edit either note. Use this when the suggestion isn't useful.
+
+## How they update
+
+Suggestions update as you write. When you save a note, the AI re-checks for similar content across your workspace and refreshes the suggestions on that note. There's no manual "run inference" button — it just works in the background, and bad suggestions get filtered as you continue writing.
+
+A few things worth knowing:
+
+- **Dismissals are workspace-wide.** If anyone in your workspace dismisses a suggestion, it stays dismissed for the whole team — there's no reason to dismiss the same pair twice.
+- **Confirmed links survive edits.** Once you confirm a suggestion, it becomes a normal link and is not affected by later edits to either side.
+- **Notes need substance to be eligible.** Suggestions require at least 150 characters of content. Short stubs and quick capture notes won't trigger inference until they have more to compare.
+
+## Privacy
+
+Inferred suggestions are computed using the same semantic search that powers [Bird's hybrid search](/ai-and-search/hybrid-search) — content is processed by Vertex AI within your existing AI provider setup. Nothing leaves your workspace boundary, and the comparison runs against your workspace's notes only.
+
+## Rollout
+
+The feature is rolling out gradually. If you don't see suggestions on your notes yet, your workspace may not have it enabled — reach out if you'd like early access.
+
+## Related
+
+- [Linked entities](/organisation/linked-entities) — the manual side of linking, including the explicit links AI suggestions get promoted to
+- [Hybrid semantic search](/ai-and-search/hybrid-search) — the same similarity model powers both features
