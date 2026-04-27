@@ -61,6 +61,26 @@ If you suspect unauthorised access or have lost a device, click **Revoke all** i
 
 Bower automatically signs you out after 30 minutes of inactivity. A warning appears 2 minutes before the timeout, giving you the option to stay signed in.
 
+## Transfer workspace ownership
+
+Workspace owners can hand the workspace to another member at any time. Useful when you're leaving a lab, switching roles, or preparing to delete your account.
+
+<Steps>
+  <Step title="Go to Settings > Workspace Management" />
+  <Step title="Scroll to the Transfer ownership control" />
+  <Step title="Pick the member who should become the new owner" />
+  <Step title="Click Transfer ownership" />
+</Steps>
+
+After the transfer:
+- The new owner gets full control of the workspace including member management and billing.
+- You become an **Admin** — you can still manage members and billing, but you lose the permanent owner carve-out for restricted notes and collections.
+- The change takes effect immediately for both of you; no sign-out is needed.
+
+<Note>
+Only the current workspace owner can transfer ownership. Admins can't transfer ownership on the owner's behalf.
+</Note>
+
 ## Delete your account
 
 <Warning>
@@ -69,11 +89,13 @@ Account deletion is permanent and cannot be undone. We recommend exporting your 
 
 To delete your account, go to **Settings > Security > Danger Zone** and click **Delete my account**. You'll be asked to type "DELETE" to confirm.
 
+**If you own one or more workspaces**, deletion is blocked until you transfer ownership. Bower will open the transfer dialog inline so you can hand each workspace to another member without leaving the deletion flow. Once every owned workspace has a new owner, deletion proceeds automatically.
+
 **What gets deleted:**
 - Your profile (email, name) and authentication record
 - Your workspace memberships and OAuth integrations
 - Workspaces where you are the sole member, including all content and files
 
 **What gets kept:**
-- In shared workspaces, your notes, files, and collections are preserved for the team. Ownership is transferred to the workspace admin.
+- In shared workspaces, your notes, files, and collections are preserved for the team. The new owner you transferred to retains full control.
 - Audit logs are anonymised — the record of actions is kept, but your identity is removed.
