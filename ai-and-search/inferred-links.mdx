@@ -16,7 +16,9 @@ Each inferred chip's menu offers two actions instead of "Unlink":
 
 ## How they update
 
-Suggestions update as you write. When you save a note, the AI re-checks for similar content across your workspace and refreshes the suggestions on that note. There's no manual "run inference" button — it just works in the background, and bad suggestions get filtered as you continue writing.
+Bower refreshes suggestions overnight. Once a day (around 3am AEST), the AI scans every note and protocol you've changed since the last run, re-checks for similar content across your workspace, and refreshes the suggestions on each. There's no manual "run inference" button — write your notes during the day, and connections appear by morning.
+
+We chose nightly batching over real-time inference to keep AI costs sustainable as the feature rolls out to everyone. In practice, the connection between two notes is just as useful the morning after as it would be three seconds after typing — and you avoid running the AI 30 times during a single editing session that hasn't settled yet.
 
 A few things worth knowing:
 
