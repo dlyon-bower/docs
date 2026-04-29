@@ -1,55 +1,161 @@
 ---
-title: "Sharing artifacts"
-description: "Generate a public link to share an artifact with anyone, no Bower account required."
+title: "Sharing notes and collections"
+description: "Choose who can read what — from a default-public workspace to a strictly creator-only private page — all from one dialog."
 ---
 
-You can share any artifact with collaborators, reviewers, or anyone else who doesn't have a Bower account. Sharing generates a unique link that gives read-only access to that artifact's content. The viewer does not need to sign in.
+Bower has two layers of access control on individual notes and collections:
 
-## Create a share link
+1. **Workspace access** — by default, every member of a workspace can see every note and collection.
+2. **Per-entity access** — you can override the default on a single note or collection to share it with only specific people, or keep it strictly private to yourself.
 
-1. Open the artifact you want to share.
-2. Open the artifact's action menu (the three-dot menu in the toolbar).
-3. Select **Share**.
-4. In the **Share** modal, click **Create link**.
-5. Optionally, set an expiry date. The link will stop working automatically after that date.
-6. Copy the link and send it to whoever you want to share with.
+You can also generate a **public link** to share a note with someone outside the workspace, no Bower account required. All of these controls live in the same **Share** dialog.
 
-Anyone with the link can view the artifact's title and content. They cannot edit the artifact, access your workspace, or see any other artifacts.
+For the bigger picture of who can do what across a workspace — owners, admins, members, viewers — see the [Workspace permissions overview](/workspaces-and-account/permissions-overview).
 
-## What viewers can see
+## Open the Share dialog
 
-- The artifact's title
-- The full note content, including text, headings, lists, and tables
-- Images attached to or embedded in the note
-- Image annotations — if you've annotated an image, viewers see the annotated version
+<Steps>
+  <Step title="Open the note or collection you want to share" />
+  <Step title="Click the action menu (three dots) in the toolbar" />
+  <Step title="Select Manage access" />
+</Steps>
 
-Viewers cannot see your workspace name, your identity as the creator, or any other artifacts in your workspace.
+The dialog shows the entity's current privacy mode at the top, the access list below, and (for notes) a public-link section at the bottom.
 
-## Manage existing links
+## The three privacy modes
 
-To see all active share links for an artifact:
+Every note and collection is in one of three modes. You change modes from inside the Share dialog.
 
-1. Open the artifact's action menu.
-2. Select **Share**.
-3. The **Share** modal lists all active links, including when each was created and how many times it has been viewed.
+### Anyone in this workspace *(default)*
 
-## Revoke a link
+Every workspace member can see this note or collection at their workspace role — admins and members can edit, viewers can read. This is the default state for everything you create.
 
-1. Open the artifact's action menu.
-2. Select **Share**.
-3. Find the link you want to deactivate.
-4. Click **Revoke**.
+Use this when the work is part of normal team output and there's no reason to restrict it.
 
-The link stops working immediately. Anyone who tries to use it will see a "link not found" message. Revocation is permanent — you cannot re-enable a revoked link, but you can create a new one.
+### Only specific people
 
-## What is not shared
+Restricted access. Only people on the access list below can see the note or collection, regardless of their workspace role. Workspace admins do **not** automatically have access; they have to be on the list.
 
-The following are never visible to someone accessing a shared link:
+**Workspace owners always retain access** in this mode — they can't be locked out of their own workspace, and they need oversight of team work.
+
+Use this when content needs a smaller audience than the full workspace — a particular project, a draft you're reviewing with one collaborator, an artefact intended for a specific group.
+
+### Just me (private)
+
+Only **you** can see the content. Even the workspace owner cannot read it.
+
+This is the mode that goes beyond workspace-owner oversight: when you click **Just me**, the note or collection is *truly* private. Useful for:
+
+* Personal drafts you're not ready to share — even with leadership.
+* Half-formed ideas you want to develop in your own space.
+* Notes specific to you (career planning, observations about colleagues, personal health-related research).
+
+<Note>
+**How "Just me" differs from "Only specific people":**
+
+* **Only specific people** — workspace owners can still read it (admin oversight).
+* **Just me** — workspace owners cannot read it. Only you, the creator, see the content.
+
+If you want absolute privacy from your workspace owner, use **Just me**.
+</Note>
+
+#### What workspace owners can still do with your private notes
+
+Workspace owners cannot **read** content you've marked Just me. But they can:
+
+* See **metadata** in audit logs — that the note exists, when it was created, when it was last edited.
+* **Delete** the note via admin tooling (deferred feature — coming soon). They cannot view the body.
+* **Transfer ownership** of the note to another user (deferred — coming soon).
+
+These are admin-only actions intended for compliance situations (employee leaving, legal hold) and always log an audit entry.
+
+#### Sharing a Just-me note moves it out of private
+
+The moment you add anyone to the access list of a Just-me note, the note is **no longer private**. Bower auto-promotes it to **Only specific people** and the workspace owner regains access. This matches Notion's model: privacy is defined by the audience, not by a flag — once you share, it's shared.
+
+You'll see a banner in the Share dialog when this happens.
+
+If you want to truly keep something private, don't share it. If you need a small private workspace for a couple of people that the org admin can't see, the right answer is a **separate workspace** — workspaces are Bower's unit of organisational visibility. Per-entity privacy is for individuals.
+
+#### Going back to private
+
+If you change your mind and want to make a shared note private again, just remove everyone from the access list. The moment the only person left on the list is you (the creator), Bower auto-flips the mode back to **Just me**.
+
+## "Use parent's settings"
+
+If a note or collection is inside a parent collection that has its own privacy settings, you can click **Use parent's settings** to drop the override and inherit from the parent again. This is different from picking **Anyone in this workspace**: using parent's settings means future changes to the parent flow down to this entity automatically.
+
+The dialog shows you what parent the entity is inheriting from with a clickable link, so you can navigate up to see how access is set there.
+
+## Per-person access in "Only specific people" mode
+
+Add members one at a time:
+
+<Steps>
+  <Step title="Type a name or email into the search box" />
+  <Step title="Pick the member from the dropdown" />
+  <Step title="Choose their permission: View, Edit, or Manage" />
+</Steps>
+
+**View** lets them read the content. **Edit** also lets them change the content. **Manage** lets them change the access list itself (re-share the entity).
+
+To remove someone, click the permission dropdown next to their row and pick **Remove**. Their access is revoked immediately — they'll lose access on their next request.
+
+### Inherited access
+
+If the displayed access list comes from a parent collection (this entity has no overrides of its own), the dialog shows "Access list inherited from *Parent name*". Edit grants on the parent to change who can access the child.
+
+### Special people: creator and workspace owner
+
+Two roles always retain a baseline level of access:
+
+* **The entity creator** — whoever made the note or collection always retains **Full access** on it. You can flip your own work to **Only specific people** without losing access yourself, even if you're not on the list.
+* **The workspace owner** — they retain access on **Workspace** and **Only specific people** modes (admin oversight). They do **not** retain access on **Just me** entities.
+
+## Public link (notes only)
+
+For notes, the **Share to web** section at the bottom of the dialog lets you generate a public URL. Anyone with the URL can read the note — they don't need a Bower account or workspace membership.
+
+<Steps>
+  <Step title="Open the Share dialog" />
+  <Step title="Click Get link in the Share to web section" />
+  <Step title="Copy the link and send it" />
+</Steps>
+
+To revoke a public link, click the red bin icon next to the Copy button. Revocation takes effect immediately.
+
+<Warning>
+A public link bypasses the per-person access list. If you've restricted a note to specific people **and** also generated a public link, anyone with the URL can view the note regardless of the access list. The dialog shows a warning when both are active.
+
+Public links also bypass **Just me** mode — generating a link on a private note instantly makes it readable by anyone with the URL. Be deliberate.
+</Warning>
+
+## What public-link viewers can see
+
+- The note's title
+- The full content, including text, headings, lists, and tables
+- Images attached or embedded
+- Image annotations
+
+Public-link viewers cannot see:
 
 - Your workspace name or any workspace details
 - Your name or any identifying information about who created the link
-- Other artifacts in your workspace
+- Other notes or collections in your workspace
 - Collections, tags, or any organisational structure
 - Internal Bower IDs or system metadata
 
-Share links give access to one artifact only. They are not a way to share your entire workspace or notebook.
+Public links give access to one note only. They are not a way to share your entire workspace.
+
+## What if the workspace doesn't allow Just me?
+
+In some compliance environments — regulated industries where every artefact must be readable by an admin — the workspace owner can disable **Just me** mode for the entire workspace. When that's the case:
+
+* Clicking **Just me** falls back to **Only specific people** with you on the list.
+* You'll see a brief message confirming the fallback.
+
+Workspace owners control this from the workspace settings — see [Workspace permissions overview](/workspaces-and-account/permissions-overview) for the toggle.
+
+## What's restrictable in v1
+
+Currently you can restrict **notes** and **collections**. Samples always inherit access from their parent collection — there is no Share dialog on a sample directly. We may add per-sample restrictions in a future release if customers ask for it.
