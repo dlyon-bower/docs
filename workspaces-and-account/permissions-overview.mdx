@@ -1,0 +1,144 @@
+---
+title: "Workspace permissions overview"
+description: "How Bower decides who can read, edit, and manage what — workspace roles, per-entity privacy, and how they fit together."
+---
+
+Bower has two layers of permissions, and they fit together in a specific way. This page covers both layers and how they interact, so you know exactly what each role can and can't do.
+
+## The two layers
+
+**Workspace roles** decide what someone can do **across** the workspace — invite people, change billing, manage settings, edit content in general. Every workspace member has exactly one role.
+
+**Per-entity privacy** decides who can read or edit a **specific** note or collection. The default is "everyone in the workspace can see it"; you can override that on individual items.
+
+Both layers run on every request — the answer Bower gives is the **most restrictive** of the two.
+
+## Workspace roles
+
+When you invite someone to a workspace, you pick their role. Roles cascade — Owner has everything Admin has, Admin has everything Member has, and so on.
+
+| | Owner | Admin | Member | Viewer |
+|---|:-:|:-:|:-:|:-:|
+| Read content | yes | yes | yes | yes |
+| Edit content | yes | yes | yes | no |
+| Create / delete content | yes | yes | yes | no |
+| Invite team members | yes | yes | no | no |
+| Change member roles | yes ¹ | yes | no | no |
+| Manage workspace settings | yes | yes | no | no |
+| Manage billing | yes | no | no | no |
+| Read **Only specific people** entities (admin oversight) | yes | only if on the list | only if on the list | only if on the list |
+| Read **Just me** entities | only if on the list | only if on the list | only if on the list | only if on the list |
+| Transfer workspace ownership | yes | no | no | no |
+
+¹ Only the **workspace owner** can promote another member to Owner. Admins can manage every other role transition (Member ↔ Admin, Member ↔ Viewer, etc.) but cannot create new Owners.
+
+### Why these roles
+
+* **Owner** — the workspace lead. They handle billing, can transfer ownership to someone else, and provide admin oversight of normal team work. They cannot read content marked **Just me**.
+* **Admin** — can manage members and settings but doesn't control billing. Useful for delegating workspace administration to lab managers without giving up the billing relationship.
+* **Member** — the default role. Can read and edit anything that's not restricted away from them, and create new content.
+* **Viewer** — read-only across the workspace. Useful for stakeholders, supervisors, or external collaborators who need to see work but not change it.
+
+### Last-Owner protection
+
+A workspace must always have at least one Owner. If you try to:
+
+* Demote the only Owner to Admin (or anything else), or
+* Remove the only Owner from the workspace (including leaving the workspace yourself if you're the sole Owner),
+
+Bower will refuse the action with a clear error message. The supported way to hand off the workspace is the **Transfer ownership** flow in workspace settings: it atomically promotes the new Owner and demotes the old one in one step, so the workspace always has exactly one Owner.
+
+## Per-entity privacy
+
+By default, every note and collection in a workspace is visible to all members — that's "Anyone in this workspace" mode. You can override this on individual items via the **Share** dialog.
+
+There are three modes:
+
+| Mode | Who can read | Who can edit |
+|---|---|---|
+| **Anyone in this workspace** *(default)* | all members | members at their workspace role |
+| **Only specific people** | listed people + workspace Owner | listed people with Edit permission |
+| **Just me** | the creator + anyone explicitly on the list | the creator + listed people with Edit |
+
+For the full Share dialog walkthrough, see [Sharing notes and collections](/organisation/sharing-artifacts).
+
+### How the two layers interact
+
+When someone tries to read a note, Bower checks **both** layers and returns the most restrictive answer:
+
+* **Workspace role** decides if they can read content **at all**. Viewers can read but not edit; non-members can't read anything.
+* **Entity privacy** decides if they can read **this specific** note. A note in **Only specific people** mode is invisible to anyone not on the list (or who isn't the creator or workspace Owner). A note in **Just me** mode is invisible to anyone except the creator and people the creator has explicitly added.
+
+Examples:
+
+* Workspace Member opens a default-public note → reads it (workspace role allows, entity is open).
+* Workspace Member opens a **Only specific people** note they're not on → 404. They don't get to know it exists.
+* Workspace Owner opens a **Only specific people** note → reads it (Owner has admin oversight in this mode).
+* Workspace Owner opens a **Just me** note someone else created → 404. Owner has no oversight on Just-me content.
+* Workspace Viewer opens a default-public note → reads it (Viewer can read, entity is open). They cannot edit (Viewer role blocks).
+
+### Special people: creator and Owner
+
+Two people always retain a baseline level of access:
+
+* **The entity creator** — whoever made the note or collection always retains Full (Manage) access on it. You can mark your own work **Only specific people** without locking yourself out.
+* **The workspace Owner** — retains access on **Workspace** and **Only specific people** entities (admin oversight). The Owner does **not** retain access on **Just me** entities — that's the structural difference that makes "Just me" actually private.
+
+## Restricted content the user can't see
+
+When a workspace member follows a direct link to a note or collection they don't have access to, Bower shows a calm splash page that:
+
+* Confirms the content is private (not deleted).
+* Shows the **owner's name and email** so the user knows who to ask.
+* Offers a **Request access** button that opens an email pre-filled with a polite request.
+
+This is intentionally Notion-style: not an alarming "Access denied" but a polite handoff to the human who can grant access. If the entity actually doesn't exist (or belongs to another workspace), Bower returns a generic "not found" instead — it never confirms the existence of an entity to someone outside the workspace.
+
+## Compliance: disable "Just me" for the whole workspace
+
+For regulated industries (HIPAA, IRB-governed research, audit-everything environments), the workspace Owner can disable **Just me** mode entirely.
+
+When **Just me** is disabled in the workspace:
+
+* Users clicking "Just me" in the Share dialog get a **Only specific people** entity with themselves on the list (workspace Owner still has access).
+* The auto-demotion from **Only specific people** back to **Just me** doesn't fire when the last collaborator is removed.
+* The behaviour falls back to the previous Bower model — every entity is readable by the workspace Owner.
+
+This is opt-out: by default, **Just me** is allowed in every workspace. Workspace Owners turn it off via workspace settings when their compliance posture demands it.
+
+## Audit log
+
+Every privacy-mode change and access-list change is recorded in the audit log:
+
+* Who made the change.
+* What changed (mode flip, grant added, grant revoked).
+* When it happened.
+* What entity it affected.
+
+Audit log entries reference user IDs only — they do **not** include emails, names, or content snippets. The entity title is captured (admin needs to see what was changed). The content body is never logged.
+
+## Frequently asked
+
+**Can a workspace Member create a Just-me entity?**
+
+Yes. Any member of a workspace can create a note or collection and mark it Just me. The creator is the one who controls who else (if anyone) gets access.
+
+**What happens to my Just-me notes when I leave a workspace?**
+
+For now, they remain in the database as orphans — no one has access (not even the workspace Owner). Admin take-ownership tooling is coming in a future release. If you want to keep your work after leaving, share or export it before you go.
+
+**Does the workspace Owner know I have Just-me notes?**
+
+The Owner sees metadata in the audit log — that you created a note, when it was edited, when its privacy mode changed. They cannot see the title, content, tags, or any of the actual work.
+
+**Can I share a Just-me note with one person privately?**
+
+When you add anyone, the note is no longer Just me — Bower auto-promotes it to **Only specific people** and the workspace Owner regains access. There's no "private to two people" mode. If you genuinely need a small private space that the workspace Owner can't see, the right answer is a separate workspace.
+
+**Can I lock the workspace Owner out of even **Only specific people** entities?**
+
+No. The Owner always has access on Workspace-mode and Only-specific-people entities. They lose access only on **Just me** entities. This separation matches Notion's model and reflects the practical reality that Owners need oversight of team work but shouldn't peek into individual private notes.
+
+**Can the access list be inherited?**
+
+Yes. If a collection is in **Only specific people** mode, all notes inside it inherit that access (unless they have their own privacy settings). The Share dialog shows where access is inherited from with a clickable link, so you can navigate up and edit the source of truth.

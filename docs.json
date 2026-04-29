@@ -62,6 +62,7 @@
             "pages": [
               "workspaces-and-account/create-workspace",
               "workspaces-and-account/invite-team-members",
+              "workspaces-and-account/permissions-overview",
               "workspaces-and-account/switch-workspaces",
               "workspaces-and-account/manage-account",
               "workspaces-and-account/billing",
