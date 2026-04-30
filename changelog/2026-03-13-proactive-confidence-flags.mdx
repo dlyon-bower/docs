@@ -1,0 +1,40 @@
+---
+title: "Bird flags low-confidence captures"
+description: "After a voice note or photo OCR, Bird quietly checks the result and surfaces a notification if confidence was low — so quiet errors stop slipping through."
+sidebarTitle: "Proactive confidence flags"
+---
+
+{/* TODO(design): hero image at /images/changelog/proactive-flags-hero.png */}
+
+**Shipped 2026-03-13 · AI**
+
+Voice transcription and OCR usually work well. The risk is when they
+*almost* work — a misread digit, a mangled unit, a transcription that
+looks plausible but isn't. Bird now reads every capture after the fact,
+scores its confidence, and flags any that look uncertain.
+
+## What's new
+
+- **Background quality check** after every voice transcription and
+  every photo OCR.
+- **Confidence scoring** — Bird scores the result against the source
+  (audio recording or original image) and assigns high, medium, or low
+  confidence.
+- **Proactive toast** — if confidence is medium or low, Bird surfaces a
+  short notification on your screen pointing you at the specific
+  ambiguous values, with a one-click jump to the note.
+- **No interruption to capture** — the check runs after the capture is
+  saved. It never blocks you from finishing what you were doing.
+
+## Why this matters
+
+Silent errors are the worst kind. A typo you can see is fixable. A
+misread "240 µmol/L" that looks the same as "240 µmol/I" only surfaces
+months later when someone tries to reproduce the result. Proactive
+confidence flags catch the ambiguous cases at the moment of capture,
+when the source is fresh and the fix is cheap.
+
+## Related docs
+
+- [Mobile capture](/capture/mobile-capture)
+- [Bird, your AI assistant](/ai-and-search/bird-ai-assistant)

@@ -1,0 +1,38 @@
+---
+title: "Voice transcription upgrade"
+description: "Speech-to-text moves to Chirp 3, with markedly better punctuation, formatting, and recognition of scientific vocabulary."
+sidebarTitle: "Voice transcription upgrade"
+---
+
+{/* TODO(design): hero image at /images/changelog/voice-transcription-hero.png */}
+
+**Shipped 2026-02-08 · Capture**
+
+Voice is Bower's primary capture mode at the bench, so the quality of
+the transcription matters more than almost anything else. We've upgraded
+the speech-to-text pipeline.
+
+## What changed
+
+- **New model and API** — moved from Chirp 2 (v1) to Chirp 3 (v2). The
+  newer model handles long recordings better, recovers from background
+  noise more cleanly, and produces more readable punctuation out of the
+  box.
+- **Lab vocabulary boosting** — we configure the recogniser with hints
+  about scientific terminology so reagent names, units, and
+  protocol-specific words come back correctly rather than as a
+  best-guess.
+- **Better post-processing** — the transcript now reaches your note
+  with consistent capitalisation and sentence breaks, so what you said
+  reads more like what you'd have written.
+
+## Why this matters
+
+A voice note that reads cleanly is a voice note you'll actually
+re-read. A voice note that mangles "240 µmol/L" into "240 micromol per
+litre" is a voice note that quietly corrupts your data. The upgrade
+moves us further from the second case and closer to the first.
+
+## Related docs
+
+- [Mobile capture](/capture/mobile-capture)

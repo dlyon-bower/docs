@@ -1,0 +1,50 @@
+---
+title: "Notion-style sharing on every artifact"
+description: "Share any note, attachment, collection, or project with specific people — View, Edit, or Manage — without exposing the rest of your workspace."
+sidebarTitle: "Notion-style sharing"
+---
+
+{/* TODO(design): hero image at /images/changelog/notion-sharing-hero.png */}
+
+**Shipped 2026-04-27 · Permissions**
+
+Bower used to be all-or-nothing: anyone in your workspace could see anything
+in your workspace. That worked for tight teams. It didn't work when you needed
+to share one specific protocol with a collaborator at another lab, or hide a
+draft of a manuscript from junior team members.
+
+Every artifact now has its own share dialog.
+
+## Per-artifact access
+
+Open any note, attachment, collection, or project, click **Share**, and pick:
+
+| Role | Can read | Can edit | Can re-share |
+|---|---|---|---|
+| **View** | yes | — | — |
+| **Edit** | yes | yes | — |
+| **Manage** | yes | yes | yes |
+
+Roles cascade: granting **Edit** on a project also grants **Edit** on every
+note inside it. Override at any level by setting an explicit role on a child.
+
+## What's new in the dialog
+
+- **Search by name or email** to add workspace members or external
+  collaborators (external collaborators receive an invite email).
+- **Inherited access** is shown next to each member ("via project Foo") so
+  you understand *why* someone has access, not just *that* they do.
+- **Owner row** is hidden on private artifacts to reduce dialog noise — you
+  already know it's yours.
+
+## Why this matters
+
+Real labs don't share evenly. A PI might want full edit access to every
+protocol but only view access on individual experiment notes. A collaborator
+across institutions might need access to one project and nothing else.
+The previous workspace-wide model couldn't express that; this one does.
+
+## Related docs
+
+- [Sharing artifacts](/organisation/sharing-artifacts)
+- [Permissions overview](/workspaces-and-account/permissions-overview)

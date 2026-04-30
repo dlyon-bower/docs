@@ -73,6 +73,69 @@
         ]
       },
       {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "What's new",
+            "pages": [
+              "changelog/index"
+            ]
+          },
+          {
+            "group": "April 2026",
+            "pages": [
+              "changelog/2026-04-30-private-mode",
+              "changelog/2026-04-27-notion-style-sharing",
+              "changelog/2026-04-26-inferred-relationships",
+              "changelog/2026-04-25-bird-memory",
+              "changelog/2026-04-24-version-history",
+              "changelog/2026-04-24-spreadsheets-in-bird",
+              "changelog/2026-04-24-inline-charts",
+              "changelog/2026-04-20-audit-log-timeline",
+              "changelog/2026-04-19-ui-refresh",
+              "changelog/2026-04-17-always-on-semantic-search",
+              "changelog/2026-04-12-editor-power-ups",
+              "changelog/2026-04-12-annotations-and-diagrams",
+              "changelog/2026-04-10-voice-dictation",
+              "changelog/2026-04-08-trash-and-restore",
+              "changelog/2026-04-06-merge-notes",
+              "changelog/2026-04-03-bird-web-search",
+              "changelog/2026-04-02-compliance-and-privacy-controls"
+            ]
+          },
+          {
+            "group": "March 2026",
+            "pages": [
+              "changelog/2026-03-31-bird-on-mobile-and-glasses",
+              "changelog/2026-03-27-onboarding-checklist",
+              "changelog/2026-03-25-public-share-links",
+              "changelog/2026-03-22-wake-word-standby",
+              "changelog/2026-03-22-help-centre",
+              "changelog/2026-03-21-sharper-ocr",
+              "changelog/2026-03-20-smart-notes-vs-attachments",
+              "changelog/2026-03-17-mobile-workspace",
+              "changelog/2026-03-16-linked-entities",
+              "changelog/2026-03-15-protocols",
+              "changelog/2026-03-13-async-batch-import",
+              "changelog/2026-03-13-ai-titles-and-descriptions",
+              "changelog/2026-03-13-proactive-confidence-flags",
+              "changelog/2026-03-12-better-attachment-viewing",
+              "changelog/2026-03-08-brand-refresh"
+            ]
+          },
+          {
+            "group": "February 2026",
+            "pages": [
+              "changelog/2026-02-26-command-palette",
+              "changelog/2026-02-23-project-to-collection",
+              "changelog/2026-02-08-semantic-search",
+              "changelog/2026-02-08-voice-transcription-chirp3",
+              "changelog/2026-02-06-bird-launches"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Trust Centre",
         "groups": [
           {

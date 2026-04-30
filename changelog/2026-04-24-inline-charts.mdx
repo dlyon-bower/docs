@@ -1,0 +1,40 @@
+---
+title: "Bird draws charts inline"
+description: "When a question is better answered with a visual, Bird renders bar, line, and scatter plots directly in the chat — axes and units pulled from the source data."
+sidebarTitle: "Inline charts"
+---
+
+{/* TODO(design): hero image at /images/changelog/inline-charts-hero.png */}
+
+**Shipped 2026-04-24 · AI**
+
+Some answers want a sentence. Others want a chart. Bird now decides per
+question, and when a chart is the right answer, it renders one directly
+in the chat.
+
+## What's new
+
+- **Bar, line, and scatter plots** rendered inline in Bird's response.
+- **Axes labelled from the source** — column names, unit annotations,
+  and units of measurement carry through from your spreadsheet, note,
+  or attachment so the chart is publishable-quality, not just
+  illustrative.
+- **Question-driven** — Bird only draws a chart when the question
+  benefits from one. A summary question gets prose; a "plot column F
+  against column B" question gets a scatter plot. You can also ask
+  explicitly: "show me a line chart of...".
+- **Editable through follow-up** — refine the chart by replying.
+  "Switch the x-axis to log scale", "filter to samples after Day 5",
+  "make it a bar chart instead" — Bird re-renders.
+
+## Why this matters
+
+Charts are the single most efficient way to spot a trend or an outlier
+in tabular data. Until now, getting one meant opening a separate tool,
+formatting the data, and rebuilding the visual every time. Inline
+charts collapse that loop into the chat where you were already asking.
+
+## Related docs
+
+- [Bird, your AI assistant](/ai-and-search/bird-ai-assistant)
+- [Spreadsheets in Bird](/changelog/2026-04-24-spreadsheets-in-bird)

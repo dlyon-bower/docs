@@ -1,0 +1,60 @@
+---
+title: "Bird remembers — Personal preferences + Workspace instructions"
+description: "Two editable documents inject into every Bird conversation: Personal preferences (just for you) and Workspace instructions (shared with your team)."
+sidebarTitle: "Bird memory"
+---
+
+{/* TODO(design): hero image at /images/changelog/bird-memory-hero.png */}
+
+**Shipped 2026-04-25 · AI**
+
+A great lab partner remembers things — your preferred units, the protocols
+your group always runs, the conventions your team agreed on last quarter.
+Until now, Bird forgot all of that the moment a chat ended.
+
+That changes today.
+
+## Two new memory documents
+
+**Personal preferences** — just for you, never shared. Things like:
+
+- "I prefer SI units."
+- "When I ask for a summary, give me 3 bullets and a TL;DR sentence."
+- "I'm focused on small-molecule drug discovery — assume that context."
+
+**Workspace instructions** — shared with your team, edited by workspace
+managers. Things like:
+
+- "Our standard buffer is 1× PBS unless otherwise specified."
+- "All RT-qPCR work uses our internal primer naming convention (see Protocols)."
+- "Never suggest cell lines outside our IBC-approved list."
+
+Both documents are injected into Bird's prompt at the start of every session.
+No special syntax, no slash commands — just write what you'd tell a new lab
+member on day one.
+
+## Anti-hallucination guardrails
+
+Bird now treats your memory documents as authoritative — but it won't
+fabricate citations or invent specific protocol details that aren't in your
+notes. If your workspace instructions mention a protocol, Bird will say
+"per your workspace instructions" rather than pretending it read the protocol
+itself.
+
+## Why a character cap
+
+Both documents have a 3,000-character cap. That's deliberate. Memory documents
+work best as concise distillations, not encyclopaedias — past about 3,000
+characters, signal-to-noise drops fast and Bird starts treating your
+instructions as background noise rather than guidance.
+
+## Try it
+
+- **Personal preferences** → click your avatar → **Preferences**.
+- **Workspace instructions** → **Settings → Workspace → Bird instructions**
+  (workspace owners and managers).
+
+## Related docs
+
+- [Personal preferences](/ai-and-search/personal-preferences)
+- [Workspace instructions](/ai-and-search/workspace-instructions)

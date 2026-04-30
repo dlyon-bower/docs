@@ -1,0 +1,47 @@
+---
+title: "Editor power-ups — equations, toggles, table of contents"
+description: "Three additions to the note editor: LaTeX/KaTeX equations, collapsible toggles, and a table-of-contents sidebar that builds itself from your headings."
+sidebarTitle: "Editor power-ups"
+---
+
+{/* TODO(design): hero image at /images/changelog/editor-power-ups-hero.png */}
+
+**Shipped 2026-04-12 · Editor**
+
+The note editor picks up three additions this week — small individually,
+substantial together for anyone writing structured technical notes.
+
+## LaTeX and KaTeX equations
+
+Inline equations and block equations are now first-class in the editor.
+Type `$...$` for inline math, `$$...$$` for a block, or use the slash
+command. Equations render with KaTeX, the same engine arXiv uses, so what
+you write is what gets typeset.
+
+```
+The Henderson-Hasselbalch equation: $pH = pK_a + \log\left(\frac{[A^-]}{[HA]}\right)$
+```
+
+## Collapsible toggles (Details)
+
+A new `/details` slash command inserts a collapsible block — a heading
+that expands and collapses on click, with arbitrary content inside. Useful
+for keeping long notes scannable: collapse the methods detail, expand the
+results.
+
+## Table-of-contents sidebar
+
+Notes with headings get an automatic table of contents in a side panel
+that scrolls with the note. Click a heading to jump; the active heading
+highlights as you scroll. Long protocols and reviews suddenly become
+navigable.
+
+## Try it
+
+Open any note. The new commands are in the slash menu (`/equation`,
+`/details`, or just type `/` and search). The TOC sidebar appears
+automatically on notes with two or more headings.
+
+## Related docs
+
+- [The note editor](/capture/editor)

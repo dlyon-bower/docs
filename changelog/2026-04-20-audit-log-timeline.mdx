@@ -1,0 +1,38 @@
+---
+title: "Audit log redesigned as a timeline"
+description: "A clean activity timeline with multi-select filters, search, login deduplication, and richer event details — see exactly who did what, when."
+sidebarTitle: "Audit log timeline"
+---
+
+{/* TODO(design): hero image at /images/changelog/audit-log-timeline-hero.png */}
+
+**Shipped 2026-04-20 · Trust & compliance**
+
+The audit log is the source of truth for "who did what to which artifact."
+We've rebuilt it as a chronological timeline that reads cleanly without
+losing any of the underlying detail.
+
+## What's new
+
+- **Timeline layout** — a Notion-style chronological feed grouped by day,
+  with each event showing actor, action, and target.
+- **Multi-select filters** — filter by user, action type, entity type, and
+  date range, with chip-based selections that combine cleanly.
+- **Search** — full-text search across all events and metadata, useful
+  when you remember an artifact name but not the date.
+- **Login deduplication** — repeated logins from the same session no
+  longer flood the timeline; they collapse into a single rolled-up event.
+- **Richer event details** — for state-changing events (create, update,
+  delete), the changed fields and their old/new values are shown inline
+  for workspace members to review.
+- **Cursor pagination + export** — fast scrolling through long histories
+  and full CSV export for compliance archives.
+
+## Try it
+
+Open the **Audit log** entry in your sidebar (or **Settings → Trust →
+Audit logs** depending on your role).
+
+## Related docs
+
+- [Audit logs](/trust-centre/audit-logs)

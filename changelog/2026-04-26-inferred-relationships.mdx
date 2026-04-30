@@ -1,0 +1,57 @@
+---
+title: "Bird connects your notes for you"
+description: "Bird now infers relationships between your notes, protocols, and attachments — and surfaces them as inline link chips you can click."
+sidebarTitle: "Inferred relationships"
+---
+
+{/* TODO(design): hero image at /images/changelog/inferred-relationships-hero.png */}
+
+**Shipped 2026-04-26 · AI**
+
+The single biggest complaint about lab notebooks is that they're a write-only
+medium: you capture everything, then can't find anything. Bower's hybrid
+search helped. This goes further.
+
+## What's new
+
+Bird now reads every note you write — quietly, in the background — and infers
+which other artifacts in your workspace it's related to:
+
+- **Protocols** — "this experiment looks like it's running the Western blot
+  protocol you saved in March."
+- **Prior experiments** — "this is the third time you've measured this
+  binding affinity; here are the previous two."
+- **Attachments** — "this gel image looks like the one in note *2026-03-14
+  competition assay*."
+- **Concepts** — "you mention CRISPR-Cas9 here and in 12 other notes."
+
+These connections appear as **inline link chips** at the top of the note view.
+Click any chip to jump to the related artifact.
+
+## How this differs from manual linking
+
+[Linked entities](/changelog/2026-03-16-linked-entities) are explicit, user-created
+connections — you decide what links to what. **Inferred relationships** are
+suggestions from Bird, made by reading your notes and finding artifacts they
+relate to. The two coexist: manual links carry full weight, inferred links
+sit alongside them and are clearly labelled so you always know what's
+authoritative.
+
+## Where they come from
+
+Inferred relationships run on a nightly batch (no real-time API call per note,
+no foreground latency). The pipeline uses semantic similarity (embeddings) +
+concept extraction + a graph-aware ranking model. Per-artifact link audits in
+the **graph** view let you accept or reject suggestions; rejected suggestions
+won't reappear.
+
+## Why this matters
+
+The links you'd build manually if you had infinite time — Bird builds them
+for you, automatically, and updates them as your workspace grows. The result
+is a notebook that gets *more* useful over time, not less.
+
+## Related docs
+
+- [Inferred links](/ai-and-search/inferred-links)
+- [Linked entities](/organisation/linked-entities)

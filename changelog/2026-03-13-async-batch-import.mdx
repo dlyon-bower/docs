@@ -1,0 +1,35 @@
+---
+title: "Drop a folder, Bower handles it"
+description: "Batch import runs in the background via Cloud Tasks — upload dozens of files and keep working while Bower processes each one."
+sidebarTitle: "Batch import"
+---
+
+{/* TODO(design): hero image at /images/changelog/batch-import-hero.png */}
+
+**Shipped 2026-03-13 · Capture**
+
+Backfilling a workspace from years of files used to mean uploading one at a
+time and waiting. Now you drag a folder in, close the dialog, and keep
+working — Bower processes each file in the background.
+
+## What's new
+
+- **Drag and drop a folder** — or pick multiple files from the file picker.
+  Spreadsheets, PDFs, images, documents, voice recordings: all handled.
+- **Background processing** — extraction (OCR, transcription, parsing) runs
+  on Cloud Tasks, so the import doesn't block your tab and won't time out on
+  large batches.
+- **Spreadsheet preview** — `.csv` and `.xlsx` files get a preview before
+  import so you can confirm Bower has parsed them correctly.
+- **Live progress** — completed artifacts appear in your workspace as they
+  finish, and a notification surfaces the moment a file is ready to view.
+
+## Why this matters
+
+Most labs onboarding to Bower come with years of accumulated PDFs, photos,
+and notes. Batch import makes that backlog tractable — drop a folder, walk
+away, come back to a populated workspace.
+
+## Related docs
+
+- [Batch import](/capture/batch-import)

@@ -1,0 +1,53 @@
+---
+title: "HIPAA and GDPR controls"
+description: "PHI guard middleware with a workspace toggle, GDPR consent and data export, account deletion, retention controls, and a public sub-processors list."
+sidebarTitle: "Compliance controls"
+---
+
+{/* TODO(design): hero image at /images/changelog/compliance-controls-hero.png */}
+
+**Shipped 2026-04-02 · Trust & compliance**
+
+Researchers handling clinical data, EU residents, or anything that crosses
+an IRB review have compliance obligations that consumer software ignores.
+A new wave of controls lets workspaces operate inside those obligations
+without leaving Bower.
+
+## What's new
+
+**HIPAA**
+
+- A workspace-level **HIPAA toggle** in Security settings switches on a
+  PHI guard that applies stricter handling to all artifacts in the
+  workspace.
+- The PHI guard middleware blocks PHI from reaching unauthorised endpoints
+  and surfaces audit trails for any access.
+
+**GDPR**
+
+- **Consent management** for EU users, with granular controls for
+  analytics, error monitoring, and marketing communications.
+- **Data export** — download every artifact and metadata field associated
+  with your account, on demand.
+- **Account deletion** — from your account settings, with retention rules
+  applied so audit trails remain compliant.
+
+**Vendor management**
+
+- A public **sub-processors list** in the Trust Centre, with a vendor
+  registry behind the scenes that triggers a compliance review whenever
+  we add a new sub-processor.
+
+## Why this matters
+
+If your workspace handles patient data, EU resident data, or you're working
+under an institutional IRB, these controls are now in place — not on a
+roadmap. Pair them with Bower's existing audit log and you have the trail
+you need for an audit conversation.
+
+## Related docs
+
+- [Trust Centre](/trust-centre)
+- [HIPAA compliance](/trust-centre/hipaa-compliance)
+- [Data privacy](/trust-centre/data-privacy)
+- [Sub-processors](/trust-centre/sub-processors)

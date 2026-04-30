@@ -1,0 +1,35 @@
+---
+title: "Hybrid search is now always on"
+description: "Global search blends keyword matching and semantic similarity by default — no toggle, no second query."
+sidebarTitle: "Always-on hybrid search"
+---
+
+{/* TODO(design): hero image at /images/changelog/hybrid-search-hero.png */}
+
+**Shipped 2026-04-17 · Search**
+
+Global search now runs both a keyword search and a semantic search in
+parallel and merges the results. You don't pick a mode; you don't run two
+queries; you just type.
+
+## What changed
+
+Previously, hybrid (semantic) search lived behind a feature flag and
+required opting in for some workspaces. As of today it's the default for
+everyone, on every search surface — global Cmd+K, page-level filters, and
+Bird's internal retrieval.
+
+## Why this matters
+
+Keyword search finds notes that contain the exact word you typed. Semantic
+search finds notes that mean the same thing as what you typed, even if the
+wording is different. Real searches benefit from both — the keyword side
+handles "find note titled 2026-03-14" and the semantic side handles "find
+the experiment where the gel ran funny."
+
+You no longer have to choose, and you no longer have to remember which
+words you used in March.
+
+## Related docs
+
+- [Hybrid semantic search](/ai-and-search/hybrid-search)

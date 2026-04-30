@@ -1,0 +1,37 @@
+---
+title: "Sharper OCR for scientific text"
+description: "Photo-to-text extraction now runs on Gemini 2.5/3 Pro with a scientific-lab prompt, dramatically improving accuracy on lab notebooks, gels, and instrument readouts."
+sidebarTitle: "Sharper OCR"
+---
+
+{/* TODO(design): hero image at /images/changelog/sharper-ocr-hero.png */}
+
+**Shipped 2026-03-21 · AI**
+
+Most OCR is built for receipts and street signs. That's not what you're
+photographing at the bench. We've upgraded the photo-extraction pipeline to
+read lab content well — handwritten notebook pages, instrument readouts,
+gel labels, reagent vials.
+
+## What changed
+
+- **Model upgrade** to Gemini 2.5 Pro (and 3.1 Pro Preview where available)
+  — substantially better on scientific vocabulary, units, subscripts, and
+  chemical formulae.
+- **Lab-specific prompt** — the extraction prompt knows about reagents,
+  protocol parameters, units (mM, µmol/L, °C), and common lab notebook
+  conventions, so it makes fewer guesses on ambiguous characters.
+- **Confidence reporting** — when Bower can't read part of an image clearly,
+  Bird flags the specific region and asks you to verify before the values
+  are committed to your note.
+
+## Why this matters
+
+OCR that misreads "240 µmol/L" as "240 µmol/I" silently corrupts your data.
+The new pipeline is honest about its uncertainty — surfacing low-confidence
+regions for human review rather than guessing.
+
+## Related docs
+
+- [Mobile capture](/capture/mobile-capture)
+- [Bird, your AI assistant](/ai-and-search/bird-ai-assistant)

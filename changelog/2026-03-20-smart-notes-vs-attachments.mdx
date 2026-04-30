@@ -1,0 +1,52 @@
+---
+title: "Bower decides: note or attachment?"
+description: "When you import a file, Bower picks the right artifact type for you — voice and Word documents become notes, images become notes if their text is clear, PDFs stay as PDFs but their text becomes searchable."
+sidebarTitle: "Smart notes vs. attachments"
+---
+
+{/* TODO(design): hero image at /images/changelog/smart-notes-vs-attachments-hero.png */}
+
+**Shipped 2026-03-20 · Capture**
+
+Asking users to choose between "note" and "attachment" on every import
+was friction with no upside — researchers shouldn't have to think about
+Bower's data model to capture an observation. Bower now picks for you,
+based on what the file actually is.
+
+## How it decides
+
+| File type | What Bower does |
+| --- | --- |
+| Audio (voice recording) | Always becomes a note (transcript). The original recording stays attached. |
+| Word document, text, markdown | Always becomes a note. Original file attached. |
+| Image | Bird reads the text. High or medium confidence → note (with the image attached). Low confidence → stays as an image attachment. |
+| PDF | Stays as a PDF. Bower extracts the text in the background so the PDF is searchable, but it's not editable. |
+| Spreadsheet, CSV | Stays as an attachment. Renders inline in read-only mode. |
+| Everything else | Stays as an attachment. |
+
+## What stays in your control
+
+- **Manual override** — any image attachment or PDF can be converted to
+  a note from the artifact menu. Useful when you want to edit a PDF
+  protocol or annotate an image whose text Bower wasn't sure about.
+- **Image descriptions for everything** — even when an image stays as
+  an attachment, Bower generates a short description of what's in it
+  so you can find it semantically ("the photo of the shaker with the
+  red cap").
+- **AI titles by default** — voice notes and photo notes get generated
+  titles unless you set one explicitly.
+
+## Why this matters
+
+The split between notes and attachments was a mental model only Bower
+cared about. Removing that decision from the user makes capture
+faster, and the automatic image-to-note conversion (when confidence is
+high) is the difference between "snap a photo" and "snap a photo and
+get a structured note out of it." That's the workflow that makes mobile
+capture worth using.
+
+## Related docs
+
+- [Notes vs. attachments](/organisation/notes-vs-attachments)
+- [Mobile capture](/capture/mobile-capture)
+- [Batch import](/capture/batch-import)

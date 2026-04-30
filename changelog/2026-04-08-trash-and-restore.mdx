@@ -1,0 +1,38 @@
+---
+title: "Trash and one-click restore"
+description: "Deletes are now soft-deletes, recoverable from the trash for 30 days. Bulk restore, undo toasts, and a scheduled purge keep things tidy."
+sidebarTitle: "Trash & restore"
+---
+
+{/* TODO(design): hero image at /images/changelog/trash-restore-hero.png */}
+
+**Shipped 2026-04-08 · Workspace**
+
+Hard deletes are stressful. You've all done that thing where you delete the
+wrong note, and it takes a second for your stomach to drop. Trash fixes
+that — every delete is now recoverable.
+
+## What's new
+
+- **Soft delete** — deleting an artifact moves it to the trash rather than
+  removing it. The artifact disappears from your workspace immediately, but
+  it's recoverable.
+- **Trash page** — a dedicated view in the sidebar lists deleted artifacts
+  with the date deleted and the person who did it.
+- **One-click restore** — restore a single artifact, or use the floating
+  toolbar to restore many at once.
+- **Undo toast** — right after a delete, a toast appears with an Undo
+  button. One click and the deletion is reversed without a trip to the
+  trash.
+- **Scheduled purge** — items older than 30 days are permanently removed
+  by a background job, so trash doesn't grow forever.
+
+## Why this matters
+
+Soft deletes change the cost of cleanup. You can confidently tidy a noisy
+collection knowing nothing is gone forever within the recovery window.
+
+## Try it
+
+Find the **Trash** entry in your sidebar to see what's been deleted
+recently, or wait for the undo toast next time you delete something.

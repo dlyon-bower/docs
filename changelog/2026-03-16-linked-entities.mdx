@@ -1,0 +1,41 @@
+---
+title: "Link any artifact to any other"
+description: "Explicit cross-references between notes, protocols, collections, and attachments — so related work stays connected."
+sidebarTitle: "Linked entities"
+---
+
+{/* TODO(design): hero image at /images/changelog/linked-entities-hero.png */}
+
+**Shipped 2026-03-16 · Workspace**
+
+Lab work is rarely self-contained. A note references a protocol, which
+references a parent project, which has its own attachments. Until now, those
+relationships only existed in your head. Bower now lets you wire them up
+explicitly.
+
+## What's new
+
+Any artifact can be linked to any other:
+
+- A **note** can link to the protocol it followed and the collection it
+  belongs to.
+- A **protocol** can link to the collections that use it and the notes that
+  ran it.
+- A **collection** can link to its parent project and the protocols it
+  contains.
+- An **attachment** can link to the note it was captured into and any
+  collections it's relevant to.
+
+Links are bidirectional — if you link a note to a protocol, the protocol
+shows the note in its linked panel automatically.
+
+## Why this matters
+
+Linked entities are the foundation of your workspace's knowledge graph.
+They're what lets Bird answer questions like "show me every experiment that
+ran the Western blot protocol" or "which notes reference this reagent." The
+more you link, the smarter retrieval gets.
+
+## Related docs
+
+- [Linked entities](/organisation/linked-entities)

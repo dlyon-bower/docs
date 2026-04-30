@@ -1,0 +1,50 @@
+---
+title: "Protocols become a first-class artifact"
+description: "A dedicated artifact type for documented lab procedures, separate from notes, with its own library and a knowledge-graph relationship to the experiments that run it."
+sidebarTitle: "Protocols"
+---
+
+{/* TODO(design): hero image at /images/changelog/protocols-hero.png */}
+
+**Shipped 2026-03-15 · Workspace**
+
+Notes describe what you did. **Protocols** describe how you do it.
+They're different things, and Bower now treats them differently.
+
+## What's new
+
+- **Protocol artifact type** — a dedicated artifact alongside notes and
+  attachments. Protocols use the same rich text editor as notes, but
+  live in their own protocol library so you can browse your standard
+  operating procedures without filtering them out of your experiment
+  history.
+- **First-class URLs and routing** — protocols have their own detail
+  page, their own breadcrumbs, and their own sharing model.
+- **Knowledge graph relationships** — protocols connect to the
+  collections that use them and the notes that ran them, with
+  bidirectional links Bird can follow when answering questions.
+- **Foundations for provenance** — the protocol relationship type is
+  the first piece of a richer ontology we're building inside the
+  knowledge graph.
+
+## Why this matters
+
+A protocol is the institutional knowledge of your lab. It outlives
+individual experiments, individual researchers, sometimes individual
+projects. Treating protocols as just-another-note buried that
+distinction; treating them as a first-class type makes them findable,
+shareable, and — when you ask Bird about an experiment — automatically
+linked to the procedure it followed.
+
+## Methods vs. protocols
+
+A *method* is a published, high-level scientific technique (e.g.
+LA-ICP-MS). A *protocol* is the detailed, operational guide your
+specific lab uses to perform that method. Bower's protocol artifact is
+the second of these — an operational artifact, not a literature
+artifact.
+
+## Related docs
+
+- [Protocols](/organisation/protocols)
+- [Linked entities](/organisation/linked-entities)

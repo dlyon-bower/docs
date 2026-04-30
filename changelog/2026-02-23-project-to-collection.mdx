@@ -1,0 +1,35 @@
+---
+title: "\"Project\" is now \"Collection\""
+description: "We've renamed Bower's grouping artifact from Project to Collection across the UI, URLs, and API."
+sidebarTitle: "Project → Collection"
+---
+
+{/* TODO(design): hero image at /images/changelog/project-to-collection-hero.png */}
+
+**Shipped 2026-02-23 · Workspace**
+
+We've renamed Bower's grouping artifact from **Project** to **Collection**.
+The thing itself hasn't changed — same notes inside it, same protocols,
+same sharing model — but the term is now consistent everywhere.
+
+## What changed
+
+- The label across the UI: sidebar, menus, breadcrumbs, action buttons.
+- The URL pattern: `/projects/...` → `/collections/...`. Old URLs
+  redirect, so any links you'd already shared still work.
+- The API and MCP tools: `getProject` → `getCollection`, etc.
+- A dedicated workspace artifacts page that surfaces every artifact in
+  the workspace, not just collection-level summaries.
+
+## Why this matters
+
+"Project" is overloaded — it means a multi-year programme to one person, a
+single experiment to another, and a folder to a third. "Collection" is
+neutral: a group of related artifacts, scoped however you choose. The new
+term plays better with how Bower's used in practice and matches the
+mental model researchers actually reach for.
+
+## Related docs
+
+- [Collections](/organisation/collections)
+- [Organising your workspace](/organisation/organising-workspace)
