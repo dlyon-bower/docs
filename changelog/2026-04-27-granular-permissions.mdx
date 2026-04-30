@@ -1,0 +1,111 @@
+---
+title: "Permissions on every note and collection"
+description: "Three privacy modes per note and per collection — Anyone in the workspace, Only specific people, or Just you. Per-person View, Edit, or Manage grants. Parent inheritance and a compliance toggle baked in."
+sidebarTitle: "Granular permissions"
+---
+
+{/* TODO(design): hero image at /images/changelog/granular-permissions-hero.png */}
+
+**Shipped 2026-04-27 · Permissions**
+
+The previous permission model was workspace-wide: every member could
+read everything, full stop. It worked for tight teams. It didn't work
+when a PI needed to draft a grant in private, when a manuscript review
+needed to stay between two people, or when a regulated workspace
+needed certain notes locked down.
+
+Every note and every collection in Bower now has its own access
+control, with the level of granularity enterprise teams expect — and
+the inheritance and defaults that keep it from getting in the way.
+
+## Three privacy modes
+
+Every note and collection sits in one of three modes. Switch between
+them from the **Manage access** dialog.
+
+| Mode | Who can read | Who can edit |
+|---|---|---|
+| **Anyone in this workspace** *(default)* | all members | members at their workspace role |
+| **Only specific people** | listed people + the workspace Owner | listed people with Edit grant |
+| **Just me** | only the creator | only the creator |
+
+Defaults stay open: every new note inherits the workspace-wide setting,
+so collaboration doesn't slow down. Restrictions are deliberate, not
+accidental.
+
+## Per-person grants: View, Edit, or Manage
+
+In **Only specific people** mode, you assign each person a specific
+grant:
+
+- **View** — read the content.
+- **Edit** — read and change the content.
+- **Manage** — read, change, and re-share (edit the access list itself).
+
+Add people one at a time by name or email. Remove someone by clicking
+their role and picking **Remove** — access is revoked on their next
+request.
+
+## Inheritance: set it once on a collection
+
+Every privacy setting cascades. If you mark a collection **Only specific
+people** and add three collaborators, every note inside it inherits that
+access automatically. Notes can opt out by setting their own privacy.
+Notes can opt back in with **Use parent's settings** — future changes to
+the parent flow back down to them.
+
+The Manage access dialog shows you exactly where access is inherited
+from, with a clickable link so you can navigate up and edit at the
+right level.
+
+## "Just me" really means just you
+
+There's a structural difference between **Only specific people** and
+**Just me** that matters for trust:
+
+- In **Only specific people**, the workspace Owner retains read access.
+  This is intentional — Owners need oversight of team work.
+- In **Just me**, *no one else* can read the content. Not the Owner.
+  Not an Admin. Only you.
+
+This is the mode that goes beyond admin oversight. It's the right
+choice for half-formed drafts, personal observations, or anything you
+want to develop without leadership reading over your shoulder. The
+moment you add another collaborator, Bower auto-promotes the note to
+**Only specific people** and the Owner regains access — there's no
+"private to two people" mode.
+
+## A compliance toggle for regulated workspaces
+
+Some industries can't allow content the workspace Owner can't read —
+HIPAA-covered work, IRB-governed research, audit-everything
+environments. The Owner can disable **Just me** for the whole workspace
+in one click. With it off, clicking Just me falls back to **Only
+specific people** with the user on the list, and the Owner retains
+oversight of every note.
+
+## Request access on restricted content
+
+Following a link to a restricted note doesn't show a blank "access
+denied." It shows a calm splash with the owner's name and email and a
+**Request access** button that opens an email pre-filled with a polite
+request. Restricted content stays private; the human handoff stays
+human.
+
+## Audit log captures every change
+
+Every privacy-mode change and every grant added or revoked is recorded
+in the audit log — who, what, when, on which note. The body of the
+note is never logged; only the metadata.
+
+## Try it
+
+Open any note or collection → **⋮ menu → Manage access**. The dialog
+shows the current mode, the access list (or where it's inherited from),
+and the public-link controls in one place.
+
+## Related docs
+
+- [Sharing notes and collections](/organisation/sharing-artifacts)
+- [Workspace permissions overview](/workspaces-and-account/permissions-overview)
+- [Workspace roles](/changelog/2026-04-30-workspace-roles)

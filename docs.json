@@ -84,8 +84,8 @@
           {
             "group": "April 2026",
             "pages": [
-              "changelog/2026-04-30-private-mode",
-              "changelog/2026-04-27-notion-style-sharing",
+              "changelog/2026-04-30-workspace-roles",
+              "changelog/2026-04-27-granular-permissions",
               "changelog/2026-04-26-inferred-relationships",
               "changelog/2026-04-25-bird-memory",
               "changelog/2026-04-24-version-history",

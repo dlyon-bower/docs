@@ -1,0 +1,74 @@
+---
+title: "Workspace roles: Owner, Admin, Member, Viewer"
+description: "Four workspace roles with a clean separation of duties — billing for Owner, member management for Admin, day-to-day work for Member, read-only for Viewer."
+sidebarTitle: "Workspace roles"
+---
+
+{/* TODO(design): hero image at /images/changelog/workspace-roles-hero.png */}
+
+**Shipped 2026-04-30 · Permissions**
+
+A workspace used to be one role: you were in, or you weren't. That worked
+when teams were small. It doesn't work when you've got a PI handling
+billing, a lab manager running day-to-day operations, ten researchers
+producing the science, and a few external supervisors who need to read
+but never edit.
+
+Bower now has four workspace roles, and each one does exactly what its
+name says.
+
+## The roles
+
+| | Owner | Admin | Member | Viewer |
+|---|:-:|:-:|:-:|:-:|
+| Read content | yes | yes | yes | yes |
+| Edit and create content | yes | yes | yes | — |
+| Invite team members | yes | yes | — | — |
+| Change member roles | yes | yes (except Owner) | — | — |
+| Manage workspace settings | yes | yes | — | — |
+| Manage billing | yes | — | — | — |
+| Transfer ownership | yes | — | — | — |
+
+- **Owner** — the workspace lead. Handles billing, can transfer ownership
+  to someone else, and provides admin oversight over team work. Bower
+  always keeps at least one Owner per workspace.
+- **Admin** — manages members and workspace settings, but doesn't control
+  billing. Designed for delegation: a lab manager can run the workspace
+  without taking on the billing relationship.
+- **Member** — the default role. Read, edit, and create — the role
+  most of your team will sit in.
+- **Viewer** — read-only across the workspace. Right for stakeholders,
+  supervisors, or external collaborators who need to see work but not
+  change it.
+
+## Last-Owner protection
+
+A workspace must always have at least one Owner. Bower refuses to demote
+the only Owner, refuses to remove them, and refuses to let them leave the
+workspace if they're the last one. The supported handover is the
+**Transfer ownership** flow — it atomically promotes the new Owner and
+demotes the old one in a single step, so there's never a moment where
+the workspace has no Owner.
+
+## How roles interact with per-note privacy
+
+Workspace roles decide what someone can do *across* the workspace.
+[Granular permissions](/changelog/2026-04-27-granular-permissions) decide
+who can read or edit a *specific* note or collection. Bower runs both
+checks on every request and returns the most restrictive answer — so a
+Viewer can read a default-public note but can't edit it, and a Member
+opening a note they're not on the access list for gets a polite
+"request access" page rather than the content.
+
+## Try it
+
+- **Existing workspace:** Settings → Workspace → Members. Click the role
+  dropdown next to a member to change it. Promotions to Owner are
+  Owner-only.
+- **New invitations:** the invite dialog now includes a role picker
+  defaulting to Member.
+
+## Related docs
+
+- [Workspace permissions overview](/workspaces-and-account/permissions-overview)
+- [Granular permissions](/changelog/2026-04-27-granular-permissions)
