@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <circle cx="40" cy="40" r="38" stroke="#4C1D95" stroke-width="3" fill="#F3EEFB"/>
+  <circle cx="40" cy="40" r="30" stroke="#4C1D95" stroke-width="2" fill="#4C1D95"/>
+  <text x="40" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="white">WCAG</text>
+  <text x="40" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" font-weight="600" fill="white" opacity="0.9">2.2 AA</text>
+</svg>

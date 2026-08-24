@@ -205,6 +205,7 @@
               "trust-center/cookies",
               "trust-center/audit-logs",
               "trust-center/hipaa-compliance",
+      "trust-center/accessibility",
               "trust-center/password-and-security",
               "trust-center/privacy-policy",
               "trust-center/terms-of-service"
