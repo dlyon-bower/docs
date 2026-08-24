@@ -7,7 +7,7 @@ Bower is built for researchers who handle sensitive data. Every feature, from ca
 
 ## Compliance
 
-<CardGroup cols={4}>
+<CardGroup cols={3}>
   <Card>
     <div style={{ textAlign: "center" }}>
       <img src="/images/badge-gdpr.svg" alt="GDPR" width="72" style={{ margin: "0 auto 12px" }} />
@@ -17,26 +17,61 @@ Bower is built for researchers who handle sensitive data. Every feature, from ca
   </Card>
   <Card>
     <div style={{ textAlign: "center" }}>
-      <img src="/images/badge-soc2.svg" alt="SOC 2 Type II" width="72" style={{ margin: "0 auto 12px" }} />
-      <p style={{ fontWeight: 600, fontSize: "15px", margin: 0 }}>SOC 2 Type II</p>
-      <p style={{ fontSize: "13px", color: "#d97706", fontWeight: 500, margin: 0 }}>In progress</p>
+      <img src="/images/badge-soc2-type1.svg" alt="SOC 2 Type I" width="72" style={{ margin: "0 auto 12px" }} />
+      <p style={{ fontWeight: 600, fontSize: "15px", margin: 0 }}>SOC 2 Type I</p>
+      <p style={{ fontSize: "13px", color: "#d97706", fontWeight: 500, margin: 0 }}>Report pending</p>
     </div>
   </Card>
   <Card>
     <div style={{ textAlign: "center" }}>
-      <img src="/images/badge-iso27001.svg" alt="ISO 27001" width="72" style={{ margin: "0 auto 12px" }} />
-      <p style={{ fontWeight: 600, fontSize: "15px", margin: 0 }}>ISO 27001</p>
-      <p style={{ fontSize: "13px", color: "#d97706", fontWeight: 500, margin: 0 }}>In progress</p>
+      <img src="/images/badge-soc2.svg" alt="SOC 2 Type II" width="72" style={{ margin: "0 auto 12px" }} />
+      <p style={{ fontWeight: 600, fontSize: "15px", margin: 0 }}>SOC 2 Type II</p>
+      <p style={{ fontSize: "13px", color: "#d97706", fontWeight: 500, margin: 0 }}>Observation window</p>
     </div>
   </Card>
+</CardGroup>
+
+<CardGroup cols={3}>
   <Card>
     <div style={{ textAlign: "center" }}>
       <img src="/images/badge-hipaa.svg" alt="HIPAA" width="72" style={{ margin: "0 auto 12px" }} />
       <p style={{ fontWeight: 600, fontSize: "15px", margin: 0 }}>HIPAA</p>
+      <p style={{ fontSize: "13px", color: "#d97706", fontWeight: 500, margin: 0 }}>Report pending</p>
+    </div>
+  </Card>
+  <Card>
+    <div style={{ textAlign: "center" }}>
+      <img src="/images/badge-privacy-act.svg" alt="Australian Privacy Act" width="72" style={{ margin: "0 auto 12px" }} />
+      <p style={{ fontWeight: 600, fontSize: "14px", margin: 0 }}>Privacy Act (AU)</p>
+      <p style={{ fontSize: "13px", color: "#16a34a", fontWeight: 500, margin: 0 }}>Compliant</p>
+    </div>
+  </Card>
+  <Card>
+    <div style={{ textAlign: "center" }}>
+      <img src="/images/badge-wcag.svg" alt="WCAG 2.2 Level AA" width="72" style={{ margin: "0 auto 12px" }} />
+      <p style={{ fontWeight: 600, fontSize: "14px", margin: 0 }}>WCAG 2.2 AA</p>
       <p style={{ fontSize: "13px", color: "#d97706", fontWeight: 500, margin: 0 }}>In progress</p>
     </div>
   </Card>
 </CardGroup>
+
+### Audit status
+
+Bower is under independent audit with [Advantage Partners](https://advantage-partners.com). Three engagements are running, at different stages:
+
+| Programme | What it covers | Where it stands | Report expected |
+| --- | --- | --- | --- |
+| **SOC 2 Type I** | Whether our security, availability, and confidentiality controls are designed appropriately, assessed at a point in time. | Audit fieldwork completed **21 August 2026**. The auditor is preparing the report. | By 5 October 2026 |
+| **SOC 2 Type II** | Whether those same controls operated effectively over a sustained period, not just on paper. | **Observation window open: 22 August to 22 November 2026.** Evidence is being collected now. | By 6 January 2027 |
+| **HIPAA Security Rule (Type I)** | Our administrative, physical, and technical safeguards for protected health information. | Audit fieldwork completed **22 August 2026**. The auditor is preparing the report. | By 6 October 2026 |
+
+<Note>
+  **No report has been issued yet.** Fieldwork is done for SOC 2 Type I and the HIPAA assessment, but neither report is in our hands, so Bower is not yet SOC 2 attested. We will publish each report here as it lands, available under NDA.
+
+  Note also that no organisation can be "HIPAA certified" — HIPAA has no certifying body. What we have undertaken is an independent Security Rule assessment, which is the closest equivalent and what a covered entity should ask for.
+
+  If you need control documentation, security questionnaire responses, a DPA, or a BAA before the reports are out, email [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai) and we will send what we have today.
+</Note>
 
 ---
 
@@ -76,6 +111,12 @@ Bower is built for researchers who handle sensitive data. Every feature, from ca
   </Card>
   <Card title="Australian Privacy Act" icon="flag">
     Operated by Benenota Pty Ltd (ABN 60 691 836 085), compliant with the Australian Privacy Principles (APPs).
+  </Card>
+  <Card title="Accessibility" icon="universal-access" href="/trust-center/accessibility">
+    We build to WCAG 2.2 Level AA. Our statement covers what we target, the gaps we know about, and how to report a barrier.
+  </Card>
+  <Card title="Report a vulnerability" icon="bug-slash" href="mailto:security@bowerlabs.ai">
+    Found a security issue? Email us and we will acknowledge within one business day. We do not pursue good-faith researchers.
   </Card>
 </CardGroup>
 
@@ -141,6 +182,9 @@ All primary data is hosted on **Google Cloud Platform (us-central1)**. The summa
   <Card title="Terms of Service" icon="file-contract" href="/trust-center/terms-of-service">
     Terms governing your use of the Bower platform.
   </Card>
+  <Card title="Accessibility statement" icon="universal-access" href="/trust-center/accessibility">
+    Our WCAG 2.2 Level AA target, the gaps we know about, and how to report an accessibility barrier.
+  </Card>
 </CardGroup>
 
 ---
@@ -149,5 +193,9 @@ All primary data is hosted on **Google Cloud Platform (us-central1)**. The summa
 
 If you have security questions, need a DPA, or want to report a vulnerability, contact us:
 
+- **Security & vulnerability reports:** [security@bowerlabs.ai](mailto:security@bowerlabs.ai)
 - **Data Protection Officer:** [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai)
+- **Accessibility feedback:** [accessibility@bowerlabs.ai](mailto:accessibility@bowerlabs.ai)
 - **General support:** [hello@bowerlabs.ai](mailto:hello@bowerlabs.ai)
+
+<sub>Trust Center last updated: August 2026.</sub>

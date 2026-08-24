@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <circle cx="40" cy="40" r="38" stroke="#0F766E" stroke-width="3" fill="#ECFAF7"/>
+  <circle cx="40" cy="40" r="30" stroke="#0F766E" stroke-width="2" fill="#0F766E"/>
+  <text x="40" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="white">PRIVACY</text>
+  <text x="40" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="white">ACT</text>
+  <text x="40" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="6" font-weight="500" fill="white" opacity="0.85">AUSTRALIA</text>
+</svg>

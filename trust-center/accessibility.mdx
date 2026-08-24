@@ -1,0 +1,69 @@
+---
+title: "Accessibility statement"
+description: "Bower's WCAG 2.2 Level AA target, where we currently stand, and how to report an accessibility barrier."
+---
+
+Bower is used by researchers, clinicians, and students who work in very different ways. We want the product to be usable regardless of how you navigate it: keyboard only, screen reader, magnification, voice, or reduced motion.
+
+## Conformance target
+
+Bower targets **[Web Content Accessibility Guidelines (WCAG) 2.2, Level AA](https://www.w3.org/TR/WCAG22/)**.
+
+<Note>
+  **We have not yet completed a formal evaluation against that target, so we make no conformance claim today.** This page states what we are building toward and how to reach us, not a result. When we have completed an assessment we will publish the outcome here, including where we fall short.
+</Note>
+
+WCAG has no certifying body. Conformance is always declared by the product owner, which is exactly why a claim is only worth what the evaluation behind it is worth. We would rather tell you we have not finished than publish a badge with nothing underneath it.
+
+## What we are building toward
+
+These are our design targets. They are not audited results.
+
+<CardGroup cols={2}>
+  <Card title="Keyboard navigation" icon="keyboard">
+    Core flows, including capture, the editor, and search, operable without a pointer, with a visible focus indicator throughout. The [keyboard shortcuts reference](/capture/keyboard-shortcuts) covers what exists today.
+  </Card>
+  <Card title="Colour contrast" icon="circle-half-stroke">
+    The Level AA ratios of 4.5:1 for body text and 3:1 for large text and interface components, in both light and dark themes.
+  </Card>
+  <Card title="Semantic structure" icon="list-tree">
+    Headings, landmarks, lists, and tables built on native HTML semantics, so a screen reader can navigate by structure rather than reading linearly.
+  </Card>
+  <Card title="Text alternatives" icon="image">
+    Alt text on images and attachments. Bird's AI-generated descriptions can give you a starting point for a figure or photo, which you then correct.
+  </Card>
+  <Card title="Resize and reflow" icon="magnifying-glass-plus">
+    Usable at 200% zoom without loss of content or function.
+  </Card>
+  <Card title="Reduced motion" icon="wind">
+    Animation that respects the reduced-motion preference set in your operating system.
+  </Card>
+</CardGroup>
+
+## Known gaps
+
+Two parts of Bower are visual by nature, and we would rather name them now than have you discover them.
+
+| Area | Gap | Where it stands |
+| --- | --- | --- |
+| Annotations and diagrams | Drawing on an image is a pointer-driven canvas. There is no keyboard-only equivalent. | No workaround today. On our list. |
+| Knowledge graph | The graph is rendered visually. The same relationships appear as text in each note's linked-items list, which is the accessible equivalent. | Alternative available |
+| Imported documents | PDFs, Word files, and images you bring in carry their own accessibility characteristics. Bower cannot make an inaccessible source document accessible. | Outside our control |
+
+## Tell us about a barrier
+
+If you hit something you cannot use, we want to hear about it. A specific report is worth more to us than a general audit.
+
+- **Email:** [accessibility@bowerlabs.ai](mailto:accessibility@bowerlabs.ai)
+- **What helps:** the page or feature, what you were trying to do, and your browser and assistive technology if you use one.
+- **What we do:** we acknowledge accessibility reports within two business days and tell you our plan and timeline, or give you a workaround.
+
+If you need a **VPAT or Accessibility Conformance Report** for a procurement or institutional review, email the same address. We will tell you honestly where our evaluation stands rather than send you a document we cannot stand behind.
+
+## Related
+
+- [Trust Center](/trust-center): security, privacy, and compliance overview
+- [Keyboard shortcuts](/capture/keyboard-shortcuts): the full shortcut reference
+- [Data privacy](/trust-center/data-privacy): encryption, isolation, and access controls
+
+<sub>This statement was last reviewed in August 2026. We review it at least annually and whenever a major feature ships.</sub>
