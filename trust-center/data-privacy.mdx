@@ -75,7 +75,9 @@ If you have questions about your data or want to exercise your rights, contact o
 
 ## Deletion
 
-When you delete notes, attachments, or collections, they are **moved to trash** for 30 days. During this period you can restore them from **Trash** in the sidebar. After 30 days, trashed items are automatically and permanently deleted from the database and file storage.
+When you delete notes, attachments, or collections, they are **moved to trash** for 30 days. During this period you can restore them from **Trash** in the sidebar. After 30 days, trashed items are automatically purged: they are removed from the database and are no longer reachable from Bower in any form.
+
+Backups take a little longer to catch up. Purged files are fully erased from file storage within about 37 days of the purge, and database backups are kept for about 30 days. These windows exist so we can recover from an outage or an accidental deletion. Nothing in them is reachable from the product, they are encrypted, and access is restricted to our operators.
 
 - **Deleted notes and attachments** are moved to trash. They are excluded from search, share links, and all normal views while in trash.
 - **Deleting a collection** moves all notes and sub-collections within it to trash.
@@ -86,6 +88,8 @@ When you delete notes, attachments, or collections, they are **moved to trash** 
   - Workspaces where you are the sole member (and all content and files within)
 
   **In shared workspaces** (where other members exist), your notes, files, and collections are kept for the team; ownership is transferred to the workspace admin. Only your membership is removed. Audit logs are anonymized (the record of what happened is preserved, but your identity is removed).
+
+Account deletion skips trash and removes your data straight away, but the same backup windows described above still apply before it is fully erased.
 
 We recommend [exporting your data](#your-data-rights) before deleting your account.
 
