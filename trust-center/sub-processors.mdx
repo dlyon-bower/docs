@@ -107,6 +107,14 @@ When you ask Bird to find papers, resolve a DOI, or look up an author, it querie
 
 These are public scholarly registries handling public identifiers and search queries, not personal or research content, so no DPA or BAA is required. **Restricted-mode workspaces never reach any of them**: all seven go through one shared gateway that runs a fail-closed check before any request leaves, so the block is structural rather than repeated per service.
 
+## Advertising
+
+| Service | Purpose | Data processed | Location |
+|---------|---------|---------------|----------|
+| [LinkedIn](https://www.linkedin.com/legal/privacy-policy) | Measures our advertising on LinkedIn, and shows Bower ads to people who have visited our marketing website | The fact that a browser visited a page on bowerlabs.ai, plus IP address and browser data. **No research content, and nothing from inside the Bower app** | US / Ireland |
+
+The LinkedIn Insight Tag runs on the **marketing website only** (bowerlabs.ai). It is not present in the Bower app, and no workspace content ever reaches it. It loads only after a visitor accepts cookies; until then it is not set at all. See the [cookie policy](/trust-center/cookies) to change a choice you have already made.
+
 ## Data residency
 
 All primary data (database, files, backups) is stored in Google Cloud's **us-central1** region (Iowa, USA). AI processing may occur in the provider's default region as listed above.
@@ -115,7 +123,7 @@ All primary data (database, files, backups) is stored in Google Cloud's **us-cen
 
 We review our sub-processor list quarterly. If we add a new sub-processor that processes personal data, we will update this page. Material changes will be communicated via email to workspace owners.
 
-**Last reviewed:** 31 August 2026
+**Last reviewed:** 5 September 2026
 
 This list is generated from `config/vendor-registry.yaml`, the internal source of truth that also drives Bower's automated egress controls. If a service appears there and not here, that is a bug; tell us.
 
