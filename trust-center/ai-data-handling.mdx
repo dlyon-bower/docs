@@ -1,60 +1,88 @@
 ---
 title: "AI & your data"
-description: "Which AI providers Bower uses, where your data goes, whether it's used for training, and how to lock it down."
+description: "Which AI providers Bower uses, where your data goes, what is retained, and how to lock it down."
 ---
 
-Bower uses AI to power features like Bird (your AI assistant), voice transcription, photo text extraction, and semantic search. This page explains exactly what happens to your data when you use them.
+Bower uses AI to power Bird (your AI assistant), voice transcription, photo text extraction, and semantic search. This page explains what happens to your data when you use them.
+
+The binding commitments are in the [Terms of Service](https://bowerlabs.ai/terms) and the [Privacy Policy](https://bowerlabs.ai/privacy). This page explains how they are implemented. Where they differ, the Terms and the Privacy Policy govern.
 
 **The short version:**
 
-- **Your data is never used to train AI models.** Every provider we use is configured for inference only.
-- **Your content is encrypted in transit** (TLS) and processed in the **United States**.
-- **Providers don't keep your content** beyond what's needed to return a result (short, provider-specific retention; details below).
-- **Your research data lives in Bower's own database**, not the AI providers'.
-- AI only runs **when you use an AI feature**; it's never applied silently in the background.
+- **We do not use your identifiable content to train AI models.** Not ours, not anyone's.
+- **Our providers are contractually barred from training on it too.** Those are two separate commitments; see below.
+- **Almost all AI processing runs on Google Vertex AI**, covered by our signed Business Associate Agreement.
+- **AI quality monitoring retains request and response text** for a limited period. That is the one thing on this page most people do not expect, so it has its own section.
+- AI runs on **content you capture, as part of features you can see**, including automatic steps like note titles, text extraction from uploads, and search indexing. It is never used for anything unrelated to the product in front of you.
 
 ## Which AI providers we use
 
-We deliberately keep this list small and route each task to the most appropriate model. For the authoritative, always-current list of every service that processes data on our behalf, see the [sub-processor list](/trust-center/sub-processors).
+For the authoritative, always-current list of every service that processes data on our behalf, see the [sub-processor list](/trust-center/sub-processors).
 
-| Provider | What it's used for | Location | Covered by our BAA? |
+| Provider | What it is used for | Location | Covered by our BAA? |
 |----------|--------------------|----------|---------------------|
-| **Google Vertex AI** (Gemini, Speech-to-Text) | Every AI feature: Bird chat, voice transcription, photo/OCR text extraction, attachment understanding, PDF understanding, semantic search embeddings, live voice/video mode, and all AI classifiers | US | **Yes** |
+| **Google Vertex AI** (Gemini, Speech-to-Text, embeddings) | Every AI feature: Bird chat, voice transcription, photo and OCR text extraction, PDF and attachment understanding, semantic search embeddings, live voice and video mode, and every AI classifier | US; global endpoint for some models | **Yes** |
 
-**Every AI feature in Bower routes to Google Vertex AI**, which is covered by a signed Business Associate Agreement (BAA). That is true for all workspaces, not only those in [Restricted mode](/trust-center/hipaa-compliance) — Restricted mode adds the other protections described below, but AI inference is already inside the BAA boundary everywhere.
+**Every AI feature in Bower routes to Google Vertex AI**, which is covered by a signed Business Associate Agreement (BAA). That is true for all workspaces, not only those in [Restricted mode](/trust-center/hipaa-compliance): Restricted mode adds the other protections described below, but AI inference is already inside the BAA boundary everywhere.
 
 ## Is my data used to train AI models?
 
-**No.** Google Vertex AI is the only provider that receives your content for AI inference, and Google does not use Vertex AI API inputs or outputs to train its models.
+There are two separate claims here and they protect different things. Both are true. Neither implies the other.
+
+**1. Bower does not train on your identifiable data.** We will not use identifiable customer content to train, fine-tune, benchmark, or otherwise develop any AI model, including our own. This is a commitment in the [Terms](https://bowerlabs.ai/terms).
+
+**2. Our provider does not train on it either.** Google does not use Vertex AI inputs or outputs to train its models, and we require any AI provider that receives your content to be contractually barred from training on it, or retaining or logging it for human review beyond what is needed to return a result.
+
+### What about de-identified data?
+
+The **De-identified data** section of the [Terms](https://bowerlabs.ai/terms) reserves a right to use data that has been de-identified **and** stripped of your substantive research content. Both tests must pass. De-identifying a person does not make your science ours, and your results, findings, and inventions are excluded from that right entirely.
+
+Today that right covers operational telemetry that is de-identified by construction, such as usage counts, feature adoption, timing, and error rates. **It does not cover your free text, audio, images, or video**, because we do not yet operate a pipeline that can de-identify those to the standard the Terms set. If that changes we will update this page before relying on it.
 
 ## Where does my data go in transit?
 
-Every call to an AI provider is made **server-to-server from Bower's backend over TLS** (HTTPS); your content is encrypted the whole way. Your browser or device never talks to an AI provider directly. All providers process in **US** regions.
+Every call to an AI provider is made **server-to-server from Bower's backend over TLS**. Your browser or device never talks to an AI provider directly. Your stored data stays in the US (us-central1), and speech-to-text and live voice mode run there too. The newest Gemini text and vision models are served from Google's **global endpoint**, which may process a request in another region while it is in flight; the request still stays inside the Vertex AI BAA boundary.
 
 ## Where is my data stored?
 
 Two different things, kept separate:
 
 - **Your research data** (notes, files, transcripts, embeddings) is stored in **Bower's database and file storage** in Google Cloud's `us-central1` region (Iowa, USA). It stays there until you delete it. See [Data privacy](/trust-center/data-privacy) for retention and deletion.
-- **The AI providers** receive your content only to produce a result, and process it for **inference only**. They do not persist it for training. Provider-side retention is short and limited to operating the service safely:
+- **The AI providers** receive your content only to produce a result:
   - **Google Vertex AI**: no retention for training; data stays within our BAA boundary.
 
-### A note on AI quality monitoring
+## AI quality monitoring, and what it retains
 
-To keep AI features reliable, a sample of AI requests/responses may be sent to **Langfuse** (our observability tool) for quality monitoring. User content in these traces is gated: **workspaces in Restricted mode never send content to Langfuse**, and for other workspaces it's controlled by a capture setting. Langfuse is listed on our [sub-processor list](/trust-center/sub-processors).
+This is the part worth reading twice.
+
+To keep AI features reliable, Bower retains records of AI requests and the responses to them in **Langfuse**, a third-party observability service. **Those records contain the request and response text itself, and it is not de-identified.** We use them to find quality failures, evaluate changes before shipping, and investigate incidents you report. What improves from them is Bower itself: our prompts, our product code, and our configuration. Nothing is learned into any model's weights.
+
+To be explicit about what this is and is not:
+
+- It **is** service operation, covered by the narrow license you grant us in the [Terms](https://bowerlabs.ai/terms).
+- It is **not** de-identified data, and it is **not** used under the de-identified-data right described [above](#what-about-de-identified-data).
+- It is **not** used to train, fine-tune, or benchmark any model.
+
+These records are kept in Langfuse, which limits our access to the most recent **90 days** of them. We do not yet enforce a fixed deletion schedule; if we adopt one, this page will say so.
+
+**Workspaces in Restricted mode send nothing to Langfuse.** That block is enforced server-side and cannot be turned off from the app. For other workspaces, capture of request and response text is controlled by a platform-level setting that Bower operates; there is no per-workspace toggle today. If you want AI features without this capture, Restricted mode is how you get that. Langfuse is covered by the ClickHouse DPA, which applies by incorporation rather than separate signature; there is no BAA, which is why Restricted-mode workspaces are blocked from it entirely. Both are recorded on the [sub-processor list](/trust-center/sub-processors).
 
 ## Locking it down further
 
-If you work with especially sensitive material (protected health information, confidential or unpublished research, trade secrets, regulated data), you can enable **[Restricted mode (HIPAA-ready)](/trust-center/hipaa-compliance)** on a workspace. It enforces the strictest controls:
+If you work with especially sensitive material (protected health information, confidential or unpublished research, trade secrets, regulated data), enable **[Restricted mode (HIPAA-ready)](/trust-center/hipaa-compliance)** on the workspace. It enforces the strictest controls:
 
 - **AI processing stays on Google (Vertex AI)**, the provider covered by our signed BAA. Any AI route to a provider without a BAA is **blocked server-side**, and the block is enforced whether or not such a route currently exists.
-- **External sharing is disabled**: no public share links.
-- **No content leaves to non-BAA observability**: nothing is sent to Langfuse.
+- **Nothing goes to Langfuse.** Session replay, autocapture, and every other content-bearing analytics capture are disabled; the analytics events that remain carry only event names and metadata.
+- **External sharing is disabled**: no new public share links.
+- **Connectors, external AI app access, and literature lookups are unavailable**, because each sends content to a third party without a BAA.
+- **Word document conversion happens inside Bower** rather than at a third-party service.
 
-These restrictions are enforced by middleware and cannot be bypassed from the app. Restricted mode is HIPAA-ready, but the same controls are useful for anyone who wants to keep their workspace's data inside the tightest possible boundary.
+These restrictions are enforced by middleware and cannot be bypassed from the app. Restricted mode is HIPAA-ready, and the same controls are useful for anyone who wants their workspace inside the tightest possible boundary.
+
+Bower acts as a **Business Associate** under HIPAA, not a Covered Entity. If you will place PHI in Bower you need a signed BAA with us, and you should enable Restricted mode on that workspace: it is how these controls are enforced.
 
 ## Questions
 
-For anything about how we handle your data, contact our Data Protection Officer at [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai).
+Contact our Data Protection Officer at [privacy@bowerlabs.ai](mailto:privacy@bowerlabs.ai).
 
-**Related:** [Sub-processor list](/trust-center/sub-processors) · [Data privacy](/trust-center/data-privacy) · [HIPAA / compliance mode](/trust-center/hipaa-compliance)
+**Related:** [Sub-processor list](/trust-center/sub-processors) · [Data privacy](/trust-center/data-privacy) · [Restricted mode](/trust-center/hipaa-compliance) · [Terms of Service](https://bowerlabs.ai/terms) · [Privacy Policy](https://bowerlabs.ai/privacy)
