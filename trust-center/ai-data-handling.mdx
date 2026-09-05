@@ -21,16 +21,9 @@ For the authoritative, always-current list of every service that processes data 
 
 | Provider | What it is used for | Location | Covered by our BAA? |
 |----------|--------------------|----------|---------------------|
-| **Google Vertex AI** (Gemini, Speech-to-Text, embeddings) | Bird chat, voice transcription, photo and OCR text extraction, PDF and attachment understanding, semantic search embeddings, live voice and video mode, and every AI classifier | US; global endpoint for some models | **Yes** |
-| **OpenAI** (gpt-4o-transcribe) | Voice transcription **fallback** only, used if Google Speech-to-Text is briefly unavailable. Never used in Restricted mode. | US | No |
+| **Google Vertex AI** (Gemini, Speech-to-Text, embeddings) | Every AI feature: Bird chat, voice transcription, photo and OCR text extraction, PDF and attachment understanding, semantic search embeddings, live voice and video mode, and every AI classifier | US; global endpoint for some models | **Yes** |
 
-**Every Gemini call Bower makes routes through Vertex AI**, inside the Google Cloud BAA boundary. Bower does not use the Gemini Developer API (AI Studio). That has been true since 29 June 2026, and it is enforced at build time: a model configured to run outside Vertex while claiming HIPAA coverage fails the build rather than shipping.
-
-<Note>
-An earlier version of this page listed the Gemini Developer API as handling Bird chat outside the BAA. That was out of date. Bird chat runs on Vertex AI and is BAA-covered.
-</Note>
-
-The OpenAI transcription fallback is the only route to a provider without a BAA, and it is blocked server-side for Restricted-mode workspaces.
+**Every AI feature in Bower routes to Google Vertex AI**, which is covered by a signed Business Associate Agreement (BAA). That is true for all workspaces, not only those in [Restricted mode](/trust-center/hipaa-compliance): Restricted mode adds the other protections described below, but AI inference is already inside the BAA boundary everywhere.
 
 ## Is my data used to train AI models?
 
@@ -38,10 +31,7 @@ There are two separate claims here and they protect different things. Both are t
 
 **1. Bower does not train on your identifiable data.** We will not use identifiable customer content to train, fine-tune, benchmark, or otherwise develop any AI model, including our own. This is a commitment in the [Terms](https://bowerlabs.ai/terms).
 
-**2. Our providers do not train on it either.** We require AI providers to be contractually barred from training on your content and from retaining or logging it for human review beyond what is needed to return a result.
-
-- **Google** does not use Vertex AI inputs or outputs to train its models.
-- **OpenAI** does not train on data submitted via its API, and Bower has API request logging disabled at the organization level.
+**2. Our provider does not train on it either.** Google does not use Vertex AI inputs or outputs to train its models, and we require any AI provider that receives your content to be contractually barred from training on it, or retaining or logging it for human review beyond what is needed to return a result.
 
 ### What about de-identified data?
 
@@ -51,7 +41,7 @@ Today that right covers operational telemetry that is de-identified by construct
 
 ## Where does my data go in transit?
 
-Every call to an AI provider is made **server-to-server from Bower's backend over TLS**. Your browser or device never talks to an AI provider directly. Your stored data stays in the US (us-central1), and speech-to-text and live voice mode run there too. The newest Gemini text and vision models are served from Google's **global endpoint**, which may process a request in another region while it is in flight; the request still stays inside the Vertex AI BAA boundary. The OpenAI fallback processes in the US.
+Every call to an AI provider is made **server-to-server from Bower's backend over TLS**. Your browser or device never talks to an AI provider directly. Your stored data stays in the US (us-central1), and speech-to-text and live voice mode run there too. The newest Gemini text and vision models are served from Google's **global endpoint**, which may process a request in another region while it is in flight; the request still stays inside the Vertex AI BAA boundary.
 
 ## Where is my data stored?
 
@@ -60,7 +50,6 @@ Two different things, kept separate:
 - **Your research data** (notes, files, transcripts, embeddings) is stored in **Bower's database and file storage** in Google Cloud's `us-central1` region (Iowa, USA). It stays there until you delete it. See [Data privacy](/trust-center/data-privacy) for retention and deletion.
 - **The AI providers** receive your content only to produce a result:
   - **Google Vertex AI**: no retention for training; data stays within our BAA boundary.
-  - **OpenAI**: inputs may be held up to 30 days for abuse monitoring, then deleted. Organization-level API logging is disabled and OpenAI does not train on it.
 
 ## AI quality monitoring, and what it retains
 
@@ -82,7 +71,7 @@ These records are kept in Langfuse, which limits our access to the most recent *
 
 If you work with especially sensitive material (protected health information, confidential or unpublished research, trade secrets, regulated data), enable **[Restricted mode (HIPAA-ready)](/trust-center/hipaa-compliance)** on the workspace. It enforces the strictest controls:
 
-- **AI processing is restricted to Google Vertex AI**, the provider covered by our signed BAA. The OpenAI transcription fallback is blocked server-side.
+- **AI processing stays on Google (Vertex AI)**, the provider covered by our signed BAA. Any AI route to a provider without a BAA is **blocked server-side**, and the block is enforced whether or not such a route currently exists.
 - **Nothing goes to Langfuse.** Session replay, autocapture, and every other content-bearing analytics capture are disabled; the analytics events that remain carry only event names and metadata.
 - **External sharing is disabled**: no new public share links.
 - **Connectors, external AI app access, and literature lookups are unavailable**, because each sends content to a third party without a BAA.
