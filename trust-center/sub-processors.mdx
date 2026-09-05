@@ -11,7 +11,7 @@ We will update this page whenever we add or remove a sub-processor.
 
 For most providers, the DPA is **incorporated by reference** into the vendor's commercial terms: when we accept those terms to use the service, the DPA's data-protection obligations (including GDPR Standard Contractual Clauses for international transfers, UK/Swiss equivalents, and CCPA/CPRA) apply automatically, with no separate signature required. Where a provider offers a separately executed DPA, we link it next to the service below.
 
-Separately, **HIPAA** protections require a signed Business Associate Agreement (BAA). Only providers with a signed BAA (currently Google Cloud) may process data for **HIPAA-enabled (PHI) workspaces**; every other provider is blocked server-side for those workspaces. See [HIPAA compliance](/trust-center/hipaa-compliance) for what that allows and blocks.
+Separately, **HIPAA** protections require a signed Business Associate Agreement (BAA). Bower acts as a **Business Associate**, not a Covered Entity. Only providers with a signed BAA (currently Google Cloud and Google Workspace) may process data for workspaces in **[Restricted mode](/trust-center/hipaa-compliance)**; every other provider on this page is blocked server-side for those workspaces.
 
 ## Infrastructure & hosting
 
@@ -23,7 +23,7 @@ Separately, **HIPAA** protections require a signed Business Associate Agreement 
 
 ## AI processing
 
-When you use AI features (Bird chat, voice transcription, photo text extraction, document processing), your content is sent to one of these providers for inference. **Your data is not used to train AI models.**
+When you use AI features (Bird chat, voice transcription, photo text extraction, document processing), your content is sent to one of these providers to produce a result. **Bower does not use your identifiable content to train AI models, and these providers are contractually barred from training on it or retaining it for human review.** Those are two separate commitments; see [AI & your data](/trust-center/ai-data-handling#is-my-data-used-to-train-ai-models).
 
 | Service | Purpose | Data processed | Location |
 |---------|---------|---------------|----------|
@@ -38,6 +38,9 @@ Voice transcription uses **Google Cloud Speech-to-Text** by default. If it's tem
 | Service | Purpose | Data processed | Location |
 |---------|---------|---------------|----------|
 | [Tiptap](https://tiptap.dev/privacy-policy) | Converts uploaded Word (.docx) files into Bower documents, preserving formatting and embedded images. | The contents of the Word file you upload | EU |
+| [Google Workspace (Drive API)](https://workspace.google.com/terms/dpa_terms.html) | Converts legacy Word (.doc) files to .docx. The file is converted, exported, and then deleted. File names are not sent. | The contents of the legacy .doc file you upload | US |
+
+Google Workspace is covered by a **separate signed BAA** (executed July 2026), distinct from the Google Cloud BAA. Legacy .doc conversion is not routed through the Restricted-mode egress gate, so this row is the record that the sub-processor handling it is BAA-covered.
 
 Word imports in **Restricted-mode workspaces never reach Tiptap**; Bower converts those files itself, and embedded images are not imported. This is enforced server-side. See [HIPAA compliance](/trust-center/hipaa-compliance) for the full list of what changes in Restricted mode.
 
@@ -79,7 +82,29 @@ The [Stripe Data Processing Agreement](https://stripe.com/au/legal/dpa) applies 
 | Service | Purpose | Data processed | Location |
 |---------|---------|---------------|----------|
 | [PostHog](https://posthog.com/privacy) ([DPA](https://posthog.com/privacy#data-processing-agreement), separately executed July 2026) | Product analytics, feature flags (requires [cookie consent](/trust-center/cookies)) | Usage events and feature flag evaluations. No research content | US |
-| [Langfuse](https://langfuse.com/privacy) | AI response quality monitoring | LLM request/response traces, token counts | EU/US |
+| [Langfuse](https://langfuse.com/privacy) ([DPA](https://clickhouse.com/legal/agreements/data-processing-addendum), incorporated by reference) | AI response quality monitoring | AI request and response **text**, which is not de-identified, plus token counts and latency | EU (Ireland) |
+| [Google Cloud Trace](https://cloud.google.com/terms/cloud-privacy-notice) | Distributed tracing and performance monitoring | Trace spans, identifiers, request metadata | US |
+| [Google Analytics 4](https://policies.google.com/privacy) | Marketing-site analytics and signup-funnel attribution. In the app it fires only on an allowlist of pre-sign-in pages and stops permanently once you sign in. | Page paths, referrer, GA client id, approximate geography, device and browser. **No research content.** | US |
+
+**Langfuse agreement status:** Langfuse is part of ClickHouse, and the [ClickHouse Data Processing Addendum](https://clickhouse.com/legal/agreements/data-processing-addendum), which names Langfuse Cloud, applies by incorporation into the commercial terms, with no separate signature. ClickHouse's own [sub-processors](https://www.clickhouse.com/legal/agreements/subprocessors) apply downstream of it. There is **no BAA**: Langfuse offers one only on a separate HIPAA cloud region that Bower does not use, so Langfuse is blocked server-side for Restricted-mode workspaces rather than covered by an agreement. Records held there contain unscrubbed request and response text; Langfuse limits our access to the most recent **90 days** of them, and we do not yet enforce a fixed deletion schedule. **Restricted-mode workspaces send nothing to Langfuse**, enforced server-side. For other workspaces this is controlled by a capture setting. See [AI and your data](/trust-center/ai-data-handling#ai-quality-monitoring-and-what-it-retains).
+
+**Google Cloud Trace** is covered by the Google Cloud BAA and is available to Restricted-mode workspaces.
+
+## Research and literature lookups
+
+When you ask Bird to find papers, resolve a DOI, or look up an author, it queries public scholarly APIs. Each receives the search query Bird generates from your request.
+
+| Service | Purpose | Data processed | Location |
+|---------|---------|---------------|----------|
+| [OpenAlex](https://openalex.org/) | Literature search and metadata | Search queries, DOIs, author names | US |
+| [Crossref](https://www.crossref.org/) | DOI resolution and citation metadata | DOIs, citation queries | US/UK |
+| [Semantic Scholar](https://www.semanticscholar.org/) | Literature search and citation graph | Search queries, paper identifiers | US |
+| [arXiv](https://arxiv.org/) | Preprint search and metadata | Search queries, arXiv identifiers | US |
+| [Europe PMC](https://europepmc.org/) | Biomedical literature search | Search queries, identifiers | EU |
+| [Unpaywall](https://unpaywall.org/) | Open-access availability lookup | DOIs | US/Canada |
+| [ORCID](https://info.orcid.org/privacy-policy/) | Researcher identity lookup | ORCID iDs you enter, returned as public profile names and works | US |
+
+These are public scholarly registries handling public identifiers and search queries, not personal or research content, so no DPA or BAA is required. **Restricted-mode workspaces never reach any of them**: all seven go through one shared gateway that runs a fail-closed check before any request leaves, so the block is structural rather than repeated per service.
 
 ## Data residency
 
@@ -89,7 +114,9 @@ All primary data (database, files, backups) is stored in Google Cloud's **us-cen
 
 We review our sub-processor list quarterly. If we add a new sub-processor that processes personal data, we will update this page. Material changes will be communicated via email to workspace owners.
 
-**Last reviewed:** 12 August 2026
+**Last reviewed:** 31 August 2026
+
+This list is generated from `config/vendor-registry.yaml`, the internal source of truth that also drives Bower's automated egress controls. If a service appears there and not here, that is a bug; tell us.
 
 ## Questions
 
